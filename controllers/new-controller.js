@@ -2,7 +2,7 @@ const crypto = require("crypto");
 const multer = require("multer");
 //var upload = multer({ dest: 'uploads/' })
 const GridFsStorage = require("multer-gridfs-storage");
-const db = require("../models");
+const db = require("../models/Item");
 const mongoose = require("mongoose");
 const Grid = require("gridfs-stream");
 

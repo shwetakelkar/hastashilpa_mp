@@ -1,5 +1,5 @@
 module.exports = {
-    Item: require("./item"),
+    Item: require("./Item"),
     Order:require("./Order"),
     User:require("./User"),
     Event:require("./Event")
