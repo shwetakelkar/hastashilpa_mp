@@ -2,7 +2,7 @@ const crypto = require("crypto");
 const multer = require("multer");
 //var upload = multer({ dest: 'uploads/' })
 const GridFsStorage = require("multer-gridfs-storage");
-const db = require("../models/Item.js");
+const Item = require("../models/Item.js");
 const mongoose = require("mongoose");
 const Grid = require("gridfs-stream");
 
@@ -52,7 +52,7 @@ const storage = new GridFsStorage({
           
       }
       
-      db.Item
+      Item
         .create({email:req.body.email,
         title:req.body.title,
         description:req.body.description,

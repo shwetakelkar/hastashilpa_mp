@@ -1,11 +1,11 @@
-const db = require("../models/Order.js");
+const Order = require("../models/Order.js");
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 module.exports = {
     
     createOrder: function(req, res) {
-        db.Order
+       Order
           .create(req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
