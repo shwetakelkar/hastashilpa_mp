@@ -1,0 +1,15 @@
+.card{
+    width:600px;
+    height:200px;
+    
+
+}
+input{
+    min-width:300px !important
+}
+.btn-custom, .btn-signUp{
+    background-color: rgb(24, 59, 99) !important;
+    color:white !important;
+    
+
+}

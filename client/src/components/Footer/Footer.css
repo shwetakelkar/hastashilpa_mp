@@ -1,0 +1,11 @@
+.bd-footer{
+    background-color:  rgb(254, 216, 112)!important;
+    color: rgb(24, 59, 99);
+    /* position: static; */
+    bottom: 0;
+    width: 100%;
+    min-height: 50px;
+    line-height: 50px;
+    
+    
+}

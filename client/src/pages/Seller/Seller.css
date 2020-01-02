@@ -1,0 +1,12 @@
+ .btn-seller{
+    background-color:rgb(24, 59, 99);
+    color: white;
+ }
+ body{
+    color: rgb(24, 59, 99);
+    overflow:scroll !important;
+ }
+ .sellerForm{
+   overflow:scroll !important;
+   
+ }

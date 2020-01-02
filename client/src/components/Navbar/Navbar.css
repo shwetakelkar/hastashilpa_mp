@@ -1,0 +1,41 @@
+.navbar{
+    background-color: rgb(254, 216, 112) !important;
+    
+    
+}
+.list{
+   
+    color: rgb(24, 59, 99) !important;
+    font-weight: bold !important;
+    
+}
+.menu{
+    
+    color: rgb(24, 59, 99);
+}
+.fa{
+    font-size: 30px !important;
+    margin-right: 10px;
+}
+
+.search{
+    width:400px !important;
+    margin-left: 15%;
+}
+.logo{
+
+    width:150px;
+    height: 150px;
+    margin-left: 20px;
+
+}
+.searchBtn{
+    background-color:rgb(24, 59, 99);
+    color: white;
+}
+#dropdown-basic-button{
+    color: rgb(24, 59, 99) !important;
+    font-weight: bold !important;
+    background-color:rgb(254, 216, 112) !important; 
+    border-style: none !important;
+}
