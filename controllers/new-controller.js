@@ -4,7 +4,7 @@ const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage");
 const Item = require("../models/Item.js");
 const mongoose = require("mongoose");
-const Grid = require("gridfs-stream");
+const Grid = require("gridfs-stream")(require('mongodb'));
 
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/marketplace";
