@@ -24,9 +24,11 @@ const Navbar =(props)=>
       (
 
       <DropdownButton id="dropdown-basic-button" title={props.currentUser.name} className="list">
-        <Dropdown.Item href="/signin">Sign in</Dropdown.Item>
-        <Dropdown.Item href="/seller">Sell on HastaShilpa</Dropdown.Item>
         <Dropdown.Item href="/orders">Your orders</Dropdown.Item>
+        <DropdownButton id="dropdown-basic-button" title="As Seller"className="list ml-3">
+          <Dropdown.Item href="/seller">Sell on HastaShilpa</Dropdown.Item>
+          <Dropdown.Item href="/sellerOrders">Orders Received</Dropdown.Item>
+        </DropdownButton><hr/>
         <Dropdown.Item href="/logout">Log out</Dropdown.Item>
       </DropdownButton>)
       :(<Link to ="/signin" className="nav-link list">Log in</Link>)}

@@ -5,10 +5,12 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 module.exports = {
     
     createOrder: function(req, res) {
-       Order
-          .create(req.body)
-          .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
+      console.log("checkhere")
+      console.log(req.body)
+       Order.create(req.body).then(dbModel => res.json(dbModel))
+       .catch(err => { console.log(err);res.status(422).json(err)}); 
+          
+          
         },
      sendEmail: function(req,res){
         console.log("inside email")

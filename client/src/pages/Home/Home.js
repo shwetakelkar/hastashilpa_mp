@@ -52,10 +52,10 @@ class Home extends Component{
             this.state.events.map((elem)=>
                 <div  key={elem._id} className="card eventCard">
                     <h5>{elem.title}</h5>
-                    <h6>{elem.date}</h6>
-                    <h6>{elem.time}</h6>
-                    <h6>{elem.venue}</h6>
-                    <h6>{elem.description}</h6>
+                    <h6>Date:{((elem.date).split("T"))[0]}</h6>
+                    <h6>time:{elem.time}</h6>
+                    <h6>Venue:{elem.venue}</h6>
+                    <h6>Info:{elem.description}</h6>
                     
                 </div>
             )

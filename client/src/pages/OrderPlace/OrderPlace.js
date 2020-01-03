@@ -11,8 +11,7 @@ function OrcerPlace(props){
         to:'',
         from:'',
         subject:'',
-        message:''
-
+        message:'',
     })
 
     const handleInputChange= e =>{
@@ -23,30 +22,34 @@ function OrcerPlace(props){
 
     const sendEmail = e =>{
 
-            e.preventDefault();
-            console.log("here")
-
+        e.preventDefault();
         const msg = {
             to: fields.to,
             from: fields.from,
             subject:fields.subject,
             html:fields.message
-            
-          };
-           API.sendEmail(msg).then(res=>{
-            console.log(res)
-            setFields({fields:{to:'',from:'',subject:'',message:''}})
-            props.history.push("/")})
-            .catch(err=> console.log(err))
-
-           
-          
+        
+        };
+        let data={
+            orderTitle:props.match.params.title,
+            fileId:props.match.params.id,
+            orderInfo:fields.message,
+            userId:props.currentUser._id
+        }
+        API.saveOrder(data).then(res=>{console.log(res)
+        API.sendEmail(msg).then(res=>{
+        console.log(res)
+        setFields({fields:{to:'',from:'',subject:'',message:''}})
+        props.history.push("/")})
+        .catch(err=> console.log(err))}).catch(err=> console.log(err))
 
     }
-
+   
 
     return(
+
         <div className="container">
+            <div classname="row text-center m-4 pt-4"><h4 classname="mt-5 pt-4">Placing order for Item: {props.match.params.title}</h4></div>
             <div className="row">
                 <div className="card card-mail mt-3">
                     <form onSubmit={sendEmail}>

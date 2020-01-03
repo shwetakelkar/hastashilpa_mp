@@ -16,7 +16,7 @@ conn.once("open", () => {
   // init stream
   gfs = Grid(conn.db, mongoose.mongo);
   gfs.collection("uploads");
-  console.log("**********Connection Successful@@@@@@@@@@@@@@@");
+  console.log("Connection Successful");
 });
 
 const storage = new GridFsStorage({
@@ -100,7 +100,6 @@ const storage = new GridFsStorage({
 
       findAllImages: function(req, res){
 
-        console.log("###check here###",gfs)
         gfs.files.find().toArray((err, result) => {
           // Check if file
           if (!result || result.length === 0) {

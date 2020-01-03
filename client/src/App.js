@@ -38,7 +38,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={()=><Home currentUser={currentUser} />} />
           <Route exact path="/aboutUs" component={AboutUs} />
-          <Route exact path="/orderPlace" component={OrcerPlace} />
+          <Route exact path="/orderPlace/:title && :id" component={(props)=><OrcerPlace {...props} currentUser={currentUser} />} />
           <Route exact path="/displayItem/:id" component={DisplayItem} />
           <Route exact path="/signin" render={(props) => {
 						return <Login {...props} onLoginSuccess={this.onLoginSuccess.bind(this)} />

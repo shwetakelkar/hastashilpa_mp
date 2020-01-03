@@ -31,6 +31,7 @@ class DisplayItem extends Component
 
     renderItem(){
         let id = this.state.id;
+        let title = this.state.title;
         console.log(id)
         return(
             <div className="container">
@@ -39,9 +40,9 @@ class DisplayItem extends Component
             <div className ="card img-card mb-3">
                 <img src={ id ? `/api/new/file/${id}` : `http://placehold.it/200x200`} height="300px" alt=""></img></div><hr/>
             <div className="row">description: {this.state.description}</div><hr/>
-            <div className="row">sellerInfo: {this.state.email}+{this.state.address}</div>
+            <div className="row">sellerInfo:<p>{this.state.email}</p> <p>{this.state.address}</p></div>
             <div className="row m-3">
-            <a  href="/orderPlace" className="btn large">OrderNow</a></div>
+            <a  href={`/orderPlace/${title} && ${id}`} className="btn large">OrderNow</a></div>
             
             </div>
         )
