@@ -14,9 +14,9 @@ const conn = mongoose.createConnection("mongodb://localhost/marketplace", { useN
 let gfs;
 conn.once("open", () => {
   // init stream
-  gfs = new mongoose.mongo.GridFSBucket(conn.db, mongoose.mongo);
-  gfs.collection("uploads");
-  console.log("**********Connection Successful@@@@@@@@@@@@@@@");
+  gfs = new mongoose.mongo.GridFSBucket(conn.db,{
+    bucketName: "uploads"
+  });
 });
 
 const storage = new GridFsStorage({
