@@ -4,7 +4,7 @@ const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage");
 const Item = require("../models/Item.js");
 const mongoose = require("mongoose");
-const Grid = require("gridfs-stream")(require('mongodb'));
+const Grid = require("gridfs-stream");
 
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/marketplace";
@@ -14,9 +14,9 @@ const conn = mongoose.createConnection("mongodb://localhost/marketplace", { useN
 let gfs;
 conn.once("open", () => {
   // init stream
-  gfs = Grid(conn.db, mongoose.mongo);
+  gfs = new mongoose.mongo.GridFSBucket(conn.db, mongoose.mongo);
   gfs.collection("uploads");
-  console.log("Connection Successful");
+  console.log("**********Connection Successful@@@@@@@@@@@@@@@");
 });
 
 const storage = new GridFsStorage({
