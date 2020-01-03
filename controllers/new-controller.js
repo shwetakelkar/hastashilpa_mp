@@ -10,13 +10,13 @@ const Grid = require("gridfs-stream");
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/marketplace";
 
 
-const conn = mongoose.createConnection("mongodb://localhost/marketplace", { useNewUrlParser: true , useUnifiedTopology: true }) 
+const conn = mongoose.createConnection(MONGODB_URI, { useNewUrlParser: true , useUnifiedTopology: true }) 
 let gfs;
 conn.once("open", () => {
   // init stream
-  gfs = new mongoose.mongo.GridFSBucket(conn.db,{
-    bucketName: "uploads"
-  });
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection("uploads");
+  console.log("**********Connection Successful@@@@@@@@@@@@@@@");
 });
 
 const storage = new GridFsStorage({
