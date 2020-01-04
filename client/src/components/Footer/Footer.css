@@ -18,7 +18,7 @@
 
 .bd-footer {
     
-    background-image: linear-gradient(rgba(151, 124, 93, 0.6), rgba(192, 162, 128,.6)),url("/images/handipage2.jpg") !important;
+    background-image: linear-gradient(rgba(223, 167, 104, 0.4),rgba(216, 155, 84, 0.4)),url("/images/handipage2.jpg") !important;
     z-index: 9999;
     color: rgb(24, 59, 99);
     

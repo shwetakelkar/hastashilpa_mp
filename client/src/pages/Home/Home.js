@@ -74,12 +74,12 @@ class Home extends Component{
                         {this.renderEvents()}
                     <a href ="/event" className="btn eventBtn m-2" onClick={this.addingEvent}>AddEvent</a> 
                     </div>
-                    <div className="col-sm-6 pt-2 order-md-2"><h3 className="text-center">Recently Added Items</h3>   
+                    <div className="col-sm-7 pt-2 order-md-2"><h3 className="text-center">Recently Added Items</h3>   
                         <div className="row">  
                         {this.state.files ?
                             this.renderImages():(<div> No Item available</div>)}
                         </div></div>
-                    <div className="col-sm-3 pt-2 m-2 m-md-0 adClass order-md-12 order-12">
+                    <div className="col-sm-2 pt-2 m-2 m-md-0 adClass order-md-12 order-12">
                         <h3 className="mt-3"> Advertisments</h3>
                         <img className="addImg" src="/images/desssign.png"></img>
                     </div>
