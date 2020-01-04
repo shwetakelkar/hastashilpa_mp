@@ -3,8 +3,6 @@ import "./OrderPlace.css"
 import API from "../../utils/API";
 
 
-
-
 function OrcerPlace(props){
 
     const [fields,setFields] = useState({
@@ -49,7 +47,7 @@ function OrcerPlace(props){
     return(
 
         <div className="container">
-            <div classname="row text-center m-4 pt-4"><h4 classname="mt-5 pt-4">Placing order for Item: {props.match.params.title}</h4></div>
+            <div classname="row mt-4"><div classname="mt-3"><strong>Placing order for " {props.match.params.title} "</strong></div></div>
             <div className="row">
                 <div className="card card-mail mt-3">
                     <form onSubmit={sendEmail}>

@@ -9,4 +9,9 @@
  .sellerForm{
    overflow:scroll !important;
    
+   
+ }
+ .sellercard{
+    min-height: 500px;
+    
  }

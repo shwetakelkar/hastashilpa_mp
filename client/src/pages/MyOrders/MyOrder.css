@@ -1,0 +1,19 @@
+body{
+    color: rgb(24, 59, 99) !important;
+}
+
+.ordercard{
+    max-height:150px !important;
+    color: rgb(24, 59, 99) !important;
+    margin: 5px !important;
+    border: 25px !important;
+}
+.itemLink{
+
+    text-decoration: underline;
+    color: rgb(24, 59, 99) !important;
+ 
+}
+p{
+    margin-left: 5px;
+}

@@ -1,0 +1,28 @@
+.jumbotron{
+
+    height: 300px !important; 
+    
+    text-align: "center";
+    background-image: url("/images/handipage2.jpg") !important;
+    filter: blur(8px) !important;
+    -webkit-filter: blur(4px) !important;
+    filter: brightness(80%) !important; 
+    
+ }
+ .search-title{
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4);
+    z-index: 2;
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+ }
+

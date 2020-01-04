@@ -3,6 +3,7 @@ import API from '../../utils/API'
 import './Home.css';
 
 
+
 class Home extends Component{
 
     state={
@@ -12,9 +13,6 @@ class Home extends Component{
     }
 
     componentDidMount(){
-
-        // API.getLatestItems().then(res=>this.setState({result:res.data}))
-        // .catch(err => console.log(err));
         
         API.getEvent().then(res=>this.setState({events:res.data}))
         .catch(err => console.log(err));
@@ -34,10 +32,10 @@ class Home extends Component{
             this.state.files.map((elem)=>{
                
                
-                return<div className ="card col-sm-4 img-card mb-3" id={elem._id}>
-                    <img src={`/api/new/${elem.filename}`} alt="" id="imge"></img>
+                return<div className ="col-sm-5 img-card mb-3 mr-2 ml-4 ml-md-0" id={elem._id}>
+                    <a href={`/displayItem/${elem._id}`} ><img src={`/api/new/${elem.filename}`} alt="" id="imge"></img></a>
                     
-                    <a href={`/displayItem/${elem._id}`} className="btn btn-view small" type="button" >View</a>
+                    
                     
                 </div> }
               )
@@ -65,22 +63,26 @@ class Home extends Component{
     }
     render(){
         
-        return(<div className="container-fluid homeClass">
-            <div className="row">
-                <div className="col-sm-3 eventClass pt-2"><h3 className="text-center">Events</h3>
-                
-                {this.renderEvents()}
-                
-                
-                <a href ="/event" className="btn eventBtn m-2" onClick={this.addingEvent}>AddEvent</a> 
-                </div>
-                <div className="col-sm-6 pt-2"><h3 className="text-center">Recently added Items</h3>
+        return(
+        
+        <div>
+        
+            <div className="container-fluid homeClass">
                 <div className="row">
-                {this.state.files ?
-                    this.renderImages():(<div> No Item available</div>)}
-                </div></div>
-                <div className="col-sm-3 pt-2 adClass">
-                   <h3> Advertisments</h3>
+                    <div className="col-sm-3 eventClass pt-2 ml-5 ml-md-0 order-md-1 order-2"><h3 className="mt-3">Events</h3>
+                        <img className="addImg ml-md-4 text-center" src="/images/desssign.png"></img>
+                        {this.renderEvents()}
+                    <a href ="/event" className="btn eventBtn m-2" onClick={this.addingEvent}>AddEvent</a> 
+                    </div>
+                    <div className="col-sm-6 pt-2 order-md-2"><h3 className="text-center">Recently Added Items</h3>   
+                        <div className="row">  
+                        {this.state.files ?
+                            this.renderImages():(<div> No Item available</div>)}
+                        </div></div>
+                    <div className="col-sm-3 pt-2 m-2 m-md-0 adClass order-md-12 order-12">
+                        <h3 className="mt-3"> Advertisments</h3>
+                        <img className="addImg" src="/images/desssign.png"></img>
+                    </div>
                 </div>
             </div>
         </div>)

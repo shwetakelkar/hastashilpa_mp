@@ -36,11 +36,13 @@ class DisplayItem extends Component
         return(
             <div className="container">
             <div classname="row"><h2>{this.state.title}</h2></div><br/>
-            <div className="row">price: {this.state.price}$</div><hr/>
+            <div className="row ml-2"><h5> Price: {this.state.price}$</h5></div><hr/>
             <div className ="card img-card mb-3">
                 <img src={ id ? `/api/new/file/${id}` : `http://placehold.it/200x200`} height="300px" alt=""></img></div><hr/>
-            <div className="row">description: {this.state.description}</div><hr/>
-            <div className="row">sellerInfo:<p>{this.state.email}</p> <p>{this.state.address}</p></div>
+            <div className="row ml-2">Description: {this.state.description}</div><hr/>
+            <div className="row ml-2">SellerInfo:
+                    <p className="ml-3">{this.state.email},</p><br/>
+                    <p className="ml-3">{this.state.address}</p></div>
             <div className="row m-3">
             <a  href={`/orderPlace/${title} && ${id}`} className="btn large">OrderNow</a></div>
             

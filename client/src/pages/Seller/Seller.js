@@ -66,16 +66,18 @@ function Seller(props){
     return(
         <div className="container">
             <div className="row justify-content-center">
+                
                 <form onSubmit={handleSubmit} className="sellerform mt-3" enctype="multipart/form-data">
                     <div className="form-group" >
                         <label>Title</label>
                         <input className="form-control" type="text"  name="title" value={fields.title} onChange={handleInputChange}/>
                     </div>
                     <div className="form-group" >
-                        <label>Quote Price</label>
+                        <label>Quote Price(in $)</label>
                         <input  className="form-control" type="Number" name="price" value={fields.price} onChange={handleInputChange}/>
                     </div>
                     <div className="form-group" >
+                        <label>Add Product Image </label>
                         <input  className="form-control" type="file" name="myImage" onChange={handleFilechange}/></div>
                     <div className="form-group" >
                         <label>Description</label>
@@ -87,8 +89,9 @@ function Seller(props){
                         <label>Address</label>
                         <textarea className="form-control" type="text" name="address" value={fields.address} onChange={handleInputChange} /></div>
                     <button className="btn btn-seller m-2" disabled={!validateForm()} type="submit">Add Item</button>
-                   
+                
                 </form>
+               
             </div>
         </div>
     )

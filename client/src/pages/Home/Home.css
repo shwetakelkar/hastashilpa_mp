@@ -2,7 +2,7 @@
     width: 80%;
     min-height: 150px !important;
     color:rgb(24, 59, 99);
-    
+    background-color:rgb(211, 144, 102);
     padding:5% ;
     margin: 10px;
     border: 1px solid rgb(254, 216, 112) !important;
@@ -10,6 +10,7 @@
 }
 .eventClass, .homeClass{
     color:rgb(24, 59, 99);
+    text-align: center;
     /* text-align: center; */
 }
 .btn{
@@ -17,9 +18,12 @@
     color: white;
 }
 .adClass{
-    background-color:rgb(250, 242, 221); ;
-    height: 600px;
+    /* background-color:rgb(243, 220, 160); ; */
+    min-height: 700px;
     text-align: center;
+    background-color:rgb(211, 144, 102);
+    border-left: solid rgb(250, 242, 221)!important;;
+    
     
 }
 .homeClass{
@@ -27,9 +31,45 @@
 }
 
 #imge{
-    width:100% !important;
-    height:250px !important;
+    width:300px !important;
+    height:300px !important;
+
 }
 .img-card{
-    height:300px
+    height:300px;
+    max-width:300px !important;
+    border: 1px solid rgb(24, 59, 99) !important;
+    padding:0 !important;
+    border: 5px solid rgb(250, 242, 221)!important;
+
+
+}
+.jumbotron{
+    background-image: url("/images/handipage2.jpg");
+}
+
+body{
+    font: 18px/22px dinpro-regularregular,Arial,Helvetica,sans-serif;
+    background-color: cadetblue;
+}
+.card{
+    background-color:rgb(211, 144, 102);
+    border: 1px solid rgb(254, 216, 112) !important;
+    
+}
+.addImg{
+    background-color:transparent !important; 
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    
+}
+@media screen and (max-width:640){
+    .img-card , #imge{
+        margin-left: 25px !important;
+    }
+    .eventCard{
+        margin-left: 25px !important;
+    }
+    
 }

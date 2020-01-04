@@ -1,11 +1,56 @@
-.bd-footer{
+/* .bd-footer{
     background-color:  rgb(254, 216, 112)!important;
     color: rgb(24, 59, 99);
+    /* position: static; */
+    /* bottom: 0;
+    width: 100%;
+    min-height: 50px;
+    line-height: 50px;
+    background-image: url("/images/handipage2.jpg") !important;
+    
+    
+} */ */
+
+.footer-container{
+    max-height: 150px !important;
+    font-weight: bold !important;
+}
+
+.bd-footer {
+    
+    background-image: linear-gradient(rgba(151, 124, 93, 0.6), rgba(192, 162, 128,.6)),url("/images/handipage2.jpg") !important;
+    z-index: 9999;
+    color: rgb(24, 59, 99);
+    
     /* position: static; */
     bottom: 0;
     width: 100%;
     min-height: 50px;
     line-height: 50px;
     
-    
+
 }
+
+.bd-footer:before{
+    background-image: url("/images/handipage2.jpg") !important;
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    top:0px;
+    -webkit-filter: blur(1.5px);
+    filter: blur(1.5px);
+    z-index: -1;
+}
+
+.footer-content{
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.card-text{
+    font-size: 18px !important;
+    font-weight: unset !important;
+}
+  
+  

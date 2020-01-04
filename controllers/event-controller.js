@@ -11,6 +11,8 @@ module.exports = {
         },
 
     findAllEvents: function(req, res) {
+
+        console.log("inside event")
         
         Event
             .find({"date":{"$gte":new Date()}})

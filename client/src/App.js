@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route,Switch,Redirect } from "react-router-dom
 import './App.css';
 import AboutUs from './pages/AboutUs/AboutUs'
 import Search from './pages/Search/Search'
-import Navbar from './components/Navbar/Navbar'
+import Navibar from './components/Navibar/Navibar'
 import Login from './pages/Login/Login';
 import Footer from './components/Footer/Footer';
 import SignUp from './pages/SignUp/SignUp';
@@ -14,6 +14,7 @@ import Logout from "./pages/Logout/Logout";
 import Event from "./pages/Events/Event"
 import DisplayItem from './pages/DisplayItem/DisplayItem';
 import OrcerPlace from './pages/OrderPlace/OrderPlace';
+import MyOrders from './pages/MyOrders/MyOrders'
 
 class App extends React.Component {
 	state = { currentUser: AuthHelper.getCurrentUser() }
@@ -34,7 +35,7 @@ class App extends React.Component {
   
     <Router>
       <div>
-        <Navbar currentUser={currentUser} />
+        <Navibar currentUser={currentUser} />
         <Switch>
           <Route exact path="/" component={()=><Home currentUser={currentUser} />} />
           <Route exact path="/aboutUs" component={AboutUs} />
@@ -46,9 +47,11 @@ class App extends React.Component {
           <Route exact path="/signup" render={(props) => {
 						return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
 					}} />
-          <Route exact path="/search" component={Search} />
+          <Route exact path="/search/:name" component={Search} />
           <Route exact path="/seller" render={(props)=>{
             return <Seller {...props} />}} />
+          <Route exact path="/orders" component={(props)=> {
+          return <MyOrders {...props} currentUser={currentUser} />}}/>
           <Route exact path="/logout" render={(props) => {
 						return <Logout onLogOut={this.logOut.bind(this)} />
 					}} />

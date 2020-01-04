@@ -23,8 +23,8 @@ module.exports = {
         },
         findLatestAll: function(req, res) {
             Item
-              .find(req.query)
-              .sort({ date: -1 })
+              .find(req.query,{limit:(6)}
+              ,{sort:{$natural:-1}})
               .then(dbModel => res.json(dbModel))
               .catch(err => res.status(422).json(err));
           },
@@ -35,4 +35,12 @@ module.exports = {
                 res.json(dbModel)})
               .catch(err => res.status(422).json(err));
           },
+          findBySearchName: function(req,res){
+            
+            Item
+              .find({"title" : {'$regex': new RegExp(req.params.name, "i")}})
+              .then(data=>
+                {res.json(data)})
+              .catch(err => res.status(422).json(err))
+          }
 }

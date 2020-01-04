@@ -10,7 +10,7 @@ export default {
         return axios.get("/api/new")
     },
 
-    getLatestItems: function (title){
+    getLatestItems: function(){
         return axios.get("/api/item");
     },
 
@@ -21,6 +21,11 @@ export default {
     getItem:function(id){
 
         return axios.get("/api/item/" + id);
+
+    },
+    getAllItems:function(name){
+
+        return axios.get("/api/item/search/"+name);
 
     },
     saveItem: function(itemData){
@@ -35,6 +40,9 @@ export default {
     },
     removeOrder: function(id){
         return axios.delete("/api/order/"+ id);
+    },
+    getOrders: function(id){
+        return axios.get("api/order/"+id)
     },
     deleteItem: function(id){
         return axios.delete("/api/items/"+ id);

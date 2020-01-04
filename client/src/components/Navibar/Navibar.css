@@ -1,0 +1,131 @@
+/* .navbar{
+    /* background-color: rgb(254, 216, 112) !important; */
+    
+        
+        /* height: 200px !important; 
+        
+        
+        text-align: "center";
+        background-image: url("/images/handipage2.jpg") !important;
+        filter: blur(5px) !important;
+        -webkit-filter: blur(4px) !important;
+        /* filter: brightness(80%) !important; */
+        /* -moz-filter: blur(4px)!important;
+        -o-filter: blur(5px)!important;
+        -ms-filter: blur(5px) !important;
+        opacity: 0.6; */ */
+       
+        
+        /* opacity: 0.5; */
+        /* filter: alpha(opacity=50) */
+        
+     
+    
+    
+/* } */ */
+.navbar {
+    
+    
+    background-image: url("/images/handipage2.jpg") !important;
+    z-index: 1000;
+    height: 200px !important;
+
+}
+  
+  .navbar:before {
+    
+    background-image: url("/images/handipage2.jpg") !important;
+    content: "";
+    filter: blur(1.5px);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -1;
+  }
+.list{
+   
+    background-color: rgb(24, 59, 99)!important;
+    color:rgb(211, 144, 102)!important;
+    font-weight: bold !important;
+    margin-right: 2px;
+    border-radius: 25px;
+    
+}
+.menu{
+    
+    color: rgb(24, 59, 99);
+}
+.fa{
+    font-size: 30px !important;
+    margin-right: 10px;
+}
+
+.search{
+    width:400px !important;
+    margin-left: 15%;
+    border-radius: 15px;
+}
+.logo{
+
+    width:150px;
+    height: 150px;
+    margin-left: 20px;
+
+}
+.searchBtn{
+    background-color:rgb(24, 59, 99) !important;
+    color: rgb(211, 144, 102) !important;
+    font-weight:bold!important;
+    border-radius: 25px !important;
+}
+#dropdown-basic-button{
+    color: rgb(211, 144, 102)!important;
+    font-weight:bold!important;
+    background-color:rgb(24, 59, 99) !important; 
+    border-style: none !important;
+    /* background: transparent !important; */
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+.nav-cls {
+    height: 200px !important;
+    
+}
+
+@media screen and (max-width: 640px) {
+    .search{
+        margin-left: 0px;
+    }
+    .nav-cls {
+       height: auto;
+        
+    }
+    .aboutUsBtn{
+        display:none
+    }
+    .menu{
+        position: fixed;
+        top: 5px;
+        bottom: 0;
+        left: 0;
+        /* z-index: 1000; */
+        /* display: block; */
+        padding: 20px;
+        /* overflow-x: hidden; */
+        /* overflow-y: auto; */
+        color: #f5f5f5;
+        background-image: url("/images/handipage2.jpg") !important;
+        border-right: 1px solid rgb(24, 59, 99);
+    }
+    
+    
+}
+@media screen and (min-width: 640px) {
+    .menu{
+        display: none;
+    }
+}
+

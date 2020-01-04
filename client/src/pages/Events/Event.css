@@ -4,3 +4,9 @@
 .container{
     min-height: 500px !important;
 }
+.btn{
+    background-color: rgb(24, 59, 99)!important;
+    color:rgb(211, 144, 102)!important;
+    font-weight:bold!important;
+    border-radius: 25px !important;
+}
