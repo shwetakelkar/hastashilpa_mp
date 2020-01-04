@@ -24,9 +24,7 @@
     
 /* } */ */
 .navbar {
-    
-    
-    background-image: url("/images/handipage2.jpg") !important;
+    background-image: url("../images/handipage2.jpg") !important;
     z-index: 1000;
     height: 200px !important;
 
@@ -34,7 +32,7 @@
   
   .navbar:before {
     
-    background-image: url("/images/handipage2.jpg") !important;
+    background-image: url("../images/handipage2.jpg") !important;
     content: "";
     filter: blur(1.5px);
     position: absolute;
