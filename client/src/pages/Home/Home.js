@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import API from '../../utils/API'
 import './Home.css';
+import Slideshow from '../../components/Slideshow/Slideshow';
 
 
 
@@ -82,6 +83,7 @@ class Home extends Component{
                     <div className="col-sm-2 pt-2 m-2 m-md-0 adClass order-md-12 order-12">
                         <h3 className="mt-3"> Advertisments</h3>
                         <img className="addImg" src="/images/desssign.png"></img>
+                        <Slideshow />
                     </div>
                 </div>
             </div>

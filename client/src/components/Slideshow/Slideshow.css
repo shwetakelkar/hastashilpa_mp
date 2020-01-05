@@ -1,0 +1,38 @@
+each-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 300px;
+  }
+  
+  .each-slide span {
+    padding: 20px;
+    font-size: 20px;
+    background:transparent;
+    text-align: center;
+  }
+  .slide1{
+      background-image: url("/images/slide1.jpg");
+      height: 500px;
+      background-size: 200px 500px;
+  }
+
+  .slide2{
+    background-image: url("/images/slide2.jpg");
+    height: 500px;
+    background-size: 200px 500px;
+}
+
+  .slide-container {
+    width: 70%;
+    margin: auto; }
+
+@media screen and (max-width:640px){
+    .slide1 {
+        background-size: 400px 500px !important;
+    }
+    .slide2{
+        background-size: 400px 500px !important;
+    }
+}
