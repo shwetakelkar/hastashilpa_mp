@@ -32,7 +32,7 @@ class Home extends Component{
             this.state.files.map((elem)=>{
                
                
-                return<div className ="col-sm-5 img-card mb-3 mr-2 ml-4 ml-md-0" id={elem._id}>
+                return<div className ="col-sm-5 img-card mb-3 mr-2 ml-sm-4 ml-md-0" id={elem._id}>
                     <a href={`/displayItem/${elem._id}`} ><img src={`/api/new/${elem.filename}`} alt="" id="imge"></img></a>
                     
                     
@@ -48,7 +48,7 @@ class Home extends Component{
         return(
         
             this.state.events.map((elem)=>
-                <div  key={elem._id} className="card eventCard">
+                <div  key={elem._id} className="card ml-md-4 eventCard">
                     <h5>{elem.title}</h5>
                     <h6>Date:{((elem.date).split("T"))[0]}</h6>
                     <h6>time:{elem.time}</h6>
@@ -69,8 +69,8 @@ class Home extends Component{
         
             <div className="container-fluid homeClass">
                 <div className="row">
-                    <div className="col-sm-3 eventClass pt-2 ml-5 ml-md-0 order-md-1 order-2"><h3 className="mt-3">Events</h3>
-                        <img className="addImg ml-md-4 text-center" src="/images/desssign.png"></img>
+                    <div className="col-sm-3 eventClass pt-2 ml-5 ml-md-0 order-md-1 order-2"><h3 className="mt-3 ml-0">Events</h3>
+                        <img className="addImg ml-md-1" src="/images/desssign.png"></img>
                         {this.renderEvents()}
                     <a href ="/event" className="btn eventBtn m-2" onClick={this.addingEvent}>AddEvent</a> 
                     </div>

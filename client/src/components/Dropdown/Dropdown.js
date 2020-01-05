@@ -1,18 +1,30 @@
 import React from 'react'
+import {Dropdown , DropdownButton,Navbar} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 
-export const Dropdown =()=>(
+const DropDown =(props)=>(
 
+  <>
 
-<div className="dropdown ml-md-auto">
-        <a className="btn dropdown-toggle list" href="#" id="navbarDropdown" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false" type="button" >Language
-                  
-        </a>
-        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#/action1">English</a>
-          <a className="dropdown-item" href="#/action2">Hindi</a>
-          <a className="dropdown-item" href="#/action3">Spanish</a>
-        </div>
-      </div>
+      <DropdownButton id="dropdown-basic-button" title="English" className="ml-md-auto list">
+          <Dropdown.Item href="#/action-2">Hindi</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Spanish</Dropdown.Item>
+          <Dropdown.Item href="#/action-1">Chinese</Dropdown.Item>
+        </DropdownButton>
+        {props.currentUser ?
+        (
+
+        <DropdownButton id="dropdown-basic-button" title={props.currentUser.name} className="list">
+          <Dropdown.Item href="/orders">Your orders</Dropdown.Item>
+          <DropdownButton id="dropdown-basic-button" title="As Seller"className="list ml-3">
+            <Dropdown.Item href="/seller">Sell on HastaShilpa</Dropdown.Item>
+            <Dropdown.Item href="/sellerOrders">Orders Received</Dropdown.Item>
+          </DropdownButton><hr/>
+          <Dropdown.Item href="/logout">Log out</Dropdown.Item>
+        </DropdownButton>)
+        :(<Link to ="/signin" className="nav-link list">Log in</Link>)}
+      </>
 );
+
+export default DropDown;

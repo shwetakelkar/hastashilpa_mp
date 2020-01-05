@@ -16,20 +16,7 @@ const [state , setState] = useState({
 
 return(
     <nav role="banner" className="navbar">
-      <button  type="button" className="menu navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-        <i className="fa fa-bars"></i></button>
-        <div className="collapse navbar-collapse" id="navbar-collapse-1">
-            <ul className="nav navbar-nav">
-              <li className="active">Hi</li>
-              <li>
-                <DropdownButton id="dropdown-basic-button" title="English" className="ml-md-auto list">
-                  <Dropdown.Item href="#/action-2">Hindi</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Spanish</Dropdown.Item>
-                  <Dropdown.Item href="#/action-1">Chinese</Dropdown.Item>
-                </DropdownButton>
-              </li>
-              </ul>
-        </div>        
+            
         
       <img src="../images/logo4.png" alt="logo" className="logo"></img>
      
@@ -38,7 +25,7 @@ return(
       <a className="btn searchBtn" href={`/search/${state.search}`}>Search</a>
       
 
-      <DropdownButton id="dropdown-basic-button" title="English" className="ml-md-auto list">
+      <DropdownButton id="dropdown-basic-button" title="English" className="ml-md-auto ml-sm-0 list">
         <Dropdown.Item href="#/action-2">Hindi</Dropdown.Item>
         <Dropdown.Item href="#/action-3">Spanish</Dropdown.Item>
         <Dropdown.Item href="#/action-1">Chinese</Dropdown.Item>

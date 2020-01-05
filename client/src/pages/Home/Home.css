@@ -59,15 +59,18 @@ body{
     background-color:transparent !important; 
     height: 100px;
     width: 200px;
-    text-align: center;
+    /* text-align: center; */
     
 }
 @media screen and (max-width:640){
-    .img-card , #imge{
-        margin-left: 25px !important;
+    .img-card{
+        margin-left: 15px !important;
+    }
+    #imge{
+        margin-left: 15px !important;
     }
     .eventCard{
-        margin-left: 25px !important;
+        margin-left: 15px !important;
     }
     
 }
