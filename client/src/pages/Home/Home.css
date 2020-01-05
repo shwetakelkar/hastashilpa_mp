@@ -4,7 +4,7 @@
     color:rgb(24, 59, 99);
     background-color:rgb(211, 144, 102);
     padding:5% ;
-    margin: 10px;
+    margin:auto;
     border: 1px solid rgb(254, 216, 112) !important;
     box-shadow: 5px 5px rgb(250, 242, 221);
 }
@@ -22,8 +22,7 @@
     min-height: 700px;
     text-align: center;
     background-color:rgb(211, 144, 102);
-    border-left: solid rgb(250, 242, 221)!important;;
-    
+    border-left: solid rgb(250, 242, 221)!important;
     
 }
 .homeClass{
@@ -45,6 +44,9 @@
 .jumbotron{
     background-image: url("/images/handipage2.jpg");
 }
+.eventBtn{
+    margin:15px 0px !important
+}
 
 body{
     font: 18px/22px dinpro-regularregular,Arial,Helvetica,sans-serif;
@@ -62,15 +64,16 @@ body{
     /* text-align: center; */
     
 }
-@media screen and (max-width:640){
+@media screen and (max-width:640px){
     .img-card{
-        margin-left: 15px !important;
+        margin-left: 5px !important;
     }
     #imge{
-        margin-left: 15px !important;
+        margin-left: 5px !important;
     }
-    .eventCard{
+    /* .eventCard{
         margin-left: 15px !important;
-    }
+    } */
+
     
 }

@@ -42,10 +42,10 @@ class Login extends React.Component {
   return (
     <div className ="container">
         <div className ="row justify-content-center">
-        <div className="card m-4">
+        <div className="card login-card m-4">
           <form onSubmit={this.handleSubmit}>
-            <div className="form-group mt-3" id="email">
-            <label className ="ml-2 mr-5">Email</label>
+            <div className="form-group ml-2 mt-3" id="email">
+            <label className ="mr-5">Email</label>
             <input 
                 autoFocus
                 type="email"
@@ -54,8 +54,8 @@ class Login extends React.Component {
                 onChange={this.handleInputChange}
             />
             </div>
-            <div className="form-group mt-3" id="password">
-            <label className ="ml-2 mr-3">Password</label>
+            <div className="form-group ml-2 mt-3" id="password">
+            <label className ="mr-3">Password</label>
             <input
                 value={this.state.fields.password}
                 name="password"

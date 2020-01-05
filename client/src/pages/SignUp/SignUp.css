@@ -15,3 +15,27 @@ input{
     color:white;
     width: 80%;
 }
+
+@media screen and (max-width:640px){
+
+    .ip-cls{
+       
+        margin-left:5px !important;
+        margin-right:25px !important;
+    }
+
+    .card{
+        width:auto;
+        height:auto; 
+    
+    }
+
+    .btn-custom{
+
+        margin-bottom: 10px;
+
+    }
+
+
+
+}

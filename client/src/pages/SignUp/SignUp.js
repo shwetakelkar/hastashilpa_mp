@@ -48,38 +48,38 @@ class SignUp extends React.Component {
         <div className ="row justify-content-center">
             <div className="card m-4 signUp">
                 <form onSubmit={this.handleFormSubmit}>
-                <label className ="ml-2 ml-5 pl-3">Name</label>
-                        <div className="form-group ml-5 pl-3" id="name">
+                <label className ="ml-2 ml-md-5">Name</label>
+                        <div className="form-group ml-md-5 pl-md-3" id="name">
                         
-                            <input 
+                            <input className="ip-cls"
                                 autoFocus
                                 type="name"
                                 name="name"
                                 value={this.state.fields.name}
                                 onChange={this.handleInputChange}/>
                         </div>
-                    <label className ="ml-2 ml-5 pl-3">Email</label>
-                        <div className="form-group ml-5 pl-3" id="email">
+                    <label className ="ml-2 ml-md-5">Email</label>
+                        <div className="form-group ml-md-5 pl-md-3" id="email">
                         
-                            <input 
+                            <input className="ip-cls"
                                 type="email"
                                 name="email"
                                 value={this.state.fields.email}
                                 onChange={this.handleInputChange}/>
                         </div>
-                    <label className ="ml-2 ml-5 pl-3">password</label>
-                    <div className="form-group ml-5 pl-3" id="password">
+                    <label className ="ml-2 ml-md-5">password</label>
+                    <div className="form-group ml-md-5 pl-md-3" id="password">
                
-                        <input 
+                        <input className="ip-cls"
                             type='password'
                             name="password"
                             value={this.state.fields.password}
                             onChange={this.handleInputChange}/>
                     </div>
-                    <label className ="ml-2 ml-5 pl-3">Confirm Password</label>
-                    <div className="form-group ml-5 pl-3" id="confirmPwd">
+                    <label className ="ml-2 ml-md-5">Confirm Password</label>
+                    <div className="form-group ml-md-5 pl-md-3" id="confirmPwd">
                 
-                    <input 
+                    <input className="ip-cls"
                         type='password'
                         name="confirmPassword" 
                         value={this.state.fields.confirmPassword}

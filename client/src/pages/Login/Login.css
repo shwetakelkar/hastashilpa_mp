@@ -1,4 +1,4 @@
-.card{
+.login-card{
     width:600px;
     height:200px;
     
@@ -12,4 +12,13 @@ input{
     color:white !important;
     
 
+}
+@media screen and (max-width:640px){
+
+    .login-card{
+        width:auto;
+        height:auto;
+        
+    
+    }
 }

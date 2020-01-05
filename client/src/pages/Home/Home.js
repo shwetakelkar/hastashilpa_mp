@@ -32,7 +32,7 @@ class Home extends Component{
             this.state.files.map((elem)=>{
                
                
-                return<div className ="col-sm-5 img-card mb-3 mr-2 ml-sm-4 ml-md-0" id={elem._id}>
+                return<div className ="col-sm-5 img-card mb-3 mr-2 ml-md-0" id={elem._id}>
                     <a href={`/displayItem/${elem._id}`} ><img src={`/api/new/${elem.filename}`} alt="" id="imge"></img></a>
                     
                     
