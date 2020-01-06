@@ -3,9 +3,11 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 module.exports = {
-    
+
+  
     createOrder: function(req, res) {
       
+      console.log("create order")
        Order.create(req.body).then(dbModel => res.json(dbModel))
        .catch(err => { console.log(err);res.status(422).json(err)});  
     },

@@ -69,7 +69,7 @@ class Home extends Component{
                     <div className="col-sm-3 eventClass pt-2 ml-5 ml-md-0 order-md-1 order-2"><h3 className="mt-3 ml-0">Events</h3>
                         <img className="addImg ml-md-1" src="/images/desssign.png" alt=""></img>
                         {this.renderEvents()}
-                    <a href ="/event" className="btn eventBtn m-2" onClick={this.addingEvent}>AddEvent</a> 
+                        <p><a href ="/event" className="btn eventBtn text-center m-2" onClick={this.addingEvent}>AddEvent</a></p> 
                     </div>
                     <div className="col-sm-7 pt-2 order-md-2"><h3 className="text-center">Recently Added Products</h3>   
                         <div className="row">  

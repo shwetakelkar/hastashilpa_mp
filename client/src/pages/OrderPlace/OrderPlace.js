@@ -32,7 +32,8 @@ function OrcerPlace(props){
             orderTitle:props.match.params.title,
             fileId:props.match.params.id,
             orderInfo:fields.message,
-            userId:props.currentUser._id
+            userId:props.currentUser._id,
+            sellerEmail:fields.to
         }
         API.saveOrder(data).then(res=>{console.log(res)
         API.sendEmail(msg).then(res=>{
@@ -47,7 +48,7 @@ function OrcerPlace(props){
     return(
 
         <div className="container">
-            <div classname="row mt-4"><div classname="mt-3"><strong>Placing order for " {props.match.params.title} "</strong></div></div>
+            <div className="row mt-4"><div className="mt-3"><strong>Placing order for " {props.match.params.title} "</strong></div></div>
             <div className="row">
                 <div className="card card-mail mt-3">
                     <form onSubmit={sendEmail}>

@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const orderSchema = new Schema({
     orderTitle: { 
         type: String, 
-        unique: true, 
         required: true },
 
     createdDate: { 
@@ -13,7 +12,10 @@ const orderSchema = new Schema({
 
     userId:{
         type: String
-        
+    },
+    sellerEmail:
+    {
+        type:String
     },
     fileId:{
         type:String,
@@ -22,7 +24,5 @@ const orderSchema = new Schema({
         type:String
     }
 });
-
-
 
 module.exports = mongoose.model('Order', orderSchema);
