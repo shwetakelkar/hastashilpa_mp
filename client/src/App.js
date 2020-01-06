@@ -15,6 +15,7 @@ import Event from "./pages/Events/Event"
 import DisplayItem from './pages/DisplayItem/DisplayItem';
 import OrcerPlace from './pages/OrderPlace/OrderPlace';
 import MyOrders from './pages/MyOrders/MyOrders'
+import OrderReceived from './pages/Seller/OrderReceived'
 
 class App extends React.Component {
 	state = { currentUser: AuthHelper.getCurrentUser() }
@@ -40,7 +41,7 @@ class App extends React.Component {
           <Route exact path="/" component={()=><Home currentUser={currentUser} />} />
           <Route exact path="/aboutUs" component={AboutUs} />
           <Route exact path="/orderPlace/:title && :id" component={(props)=><OrcerPlace {...props} currentUser={currentUser} />} />
-          <Route exact path="/displayItem/:id" component={DisplayItem} />
+          <Route exact path="/displayItem/:id" component={(props)=><DisplayItem {...props} currentUser={currentUser} />}  />
           <Route exact path="/signin" render={(props) => {
 						return <Login {...props} onLoginSuccess={this.onLoginSuccess.bind(this)} />
 					}}  />
@@ -50,6 +51,8 @@ class App extends React.Component {
           <Route exact path="/search/:name" component={Search} />
           <Route exact path="/seller" render={(props)=>{
             return <Seller {...props} />}} />
+          <Route exact path="/sellerOrders" render={(props)=>{
+          return <OrderReceived {...props} />}} />
           <Route exact path="/orders" component={(props)=> {
           return <MyOrders {...props} currentUser={currentUser} />}}/>
           <Route exact path="/logout" render={(props) => {

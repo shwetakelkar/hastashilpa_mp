@@ -10,7 +10,6 @@ class MyOrders extends Component{
     }
     componentDidMount(){
 
-        console.log("inside Myorder")
         let userId = this.props.currentUser._id
         let id = this.props.match.params.id
 
@@ -27,9 +26,16 @@ class MyOrders extends Component{
 
         return(
             this.state.orders.map(elem=>
-                <div className="card ordercard">
-                    <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileId}`} alt=""><h4>{elem.orderTitle}</h4></a><hr/>
-                    <p> Description : {elem.orderInfo}</p>
+                <div className="card ordercard mt-4">
+                    <div className="row">
+                        <div className="col-sm-4">
+                            <img src={`/api/new/file/${elem.fileId}`} className="imgTumbnail" alt=""></img>
+                        </div>
+                        <div className="col-sm-8">
+                            <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileId}`} alt=""><h4>{elem.orderTitle}</h4></a><hr/> 
+                            <p> Description : {elem.orderInfo}</p>
+                        </div>
+                    </div>
                 </div>
             )
         )

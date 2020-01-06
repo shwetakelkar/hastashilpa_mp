@@ -22,8 +22,15 @@ class Search extends React.Component{
       
       return(this.state.result.map(elem=>
         <div className="card seachcard mt-4">
-          <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileID}`} alt=""><h4>{elem.title} : {elem.description}</h4></a><hr/>
-          <p className="ml-4"> Description : {elem.description}</p>
+          <div className="row">
+              <div className="col-sm-3">
+                  <img src={`/api/new/file/${elem.fileID}`} className="imgTumbnail" alt=""></img>
+              </div>
+              <div className="col-sm-8">
+                <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileID}`} alt=""><h4>{elem.title} : {elem.description}</h4></a><hr/>
+                <p className="ml-4"> Description : {elem.description}</p>
+              </div>
+            </div>
         </div>
       ))
     }

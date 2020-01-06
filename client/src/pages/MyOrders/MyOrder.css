@@ -4,8 +4,8 @@ body{
 
 .ordercard{
     max-height:150px !important;
+    width:80%;
     color: rgb(24, 59, 99) !important;
-    margin: 5px !important;
     border: 25px !important;
 }
 .itemLink{
@@ -16,4 +16,8 @@ body{
 }
 p{
     margin-left: 5px;
+}
+.imgTumbnail{
+    width:200px;
+    height: 100%;
 }
