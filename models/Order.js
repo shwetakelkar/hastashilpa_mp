@@ -6,10 +6,6 @@ const orderSchema = new Schema({
         type: String, 
         required: true },
 
-    createdDate: { 
-        type: Date, 
-        default: Date.now },
-
     userId:{
         type: String
     },
@@ -21,8 +17,13 @@ const orderSchema = new Schema({
         type:String,
     },
     orderInfo:{
-        type:String
-    }
+
+        type:String,
+        
+    },
+    createdDate: { 
+        type: Date, 
+        default: Date.now },
 });
 
 module.exports = mongoose.model('Order', orderSchema);
