@@ -41,9 +41,7 @@ class Search extends React.Component{
         return (
           <div className="container">
               <div className="row">
-                <div>
-                  {this.renderAllSearchedItems()}
-                </div>
+                {this.renderAllSearchedItems()} 
               </div>
           </div>)
         }
