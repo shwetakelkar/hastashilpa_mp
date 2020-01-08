@@ -43,12 +43,13 @@ return(
       <DropdownButton id="dropdown-basic-button" title="Seller"className="list">
           <Dropdown.Item href="/seller">Sell on HastaShilpa</Dropdown.Item>
           <Dropdown.Item href="/sellerOrders">Orders Received</Dropdown.Item>
+          <Dropdown.Item href="/editItms">Edit Products</Dropdown.Item>
       </DropdownButton>
       </>)
       :(<Link to ="/signin" className=" ml-md-auto nav-link list">Log in</Link>)}
 
       {/* <Link  to= "/aboutUs" className="nav-link list aboutUsBtn" >Aboutus</Link> */}
-      <Link  to= "/" className="nav-link list">Home</Link>
+      <Link  to= "/" className="nav-link list home">Home</Link>
       
     </nav>
 

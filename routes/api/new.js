@@ -9,6 +9,11 @@ router.route('/')
  
 router.route("/:filename").get(newController.findImage)
 //router.route("/file/:id").get(newController.findImage)
-router.route("/file/:id").get(newController.findImagebyId)
+
+router.route("/file/:id")
+.get(newController.findImagebyId)
+
+router.route("/image/:id")
+.delete(newController.removeFile)
 
 module.exports = router;

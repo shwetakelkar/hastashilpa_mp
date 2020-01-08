@@ -37,7 +37,10 @@ class SignUp extends React.Component {
 			if(user) {
 				this.props.onSignUpSuccess(user)
 				this.props.history.push('/')
-			}
+            }
+            else{
+                alert("User is already exist. Please Login!")
+            }
 		})
 
     }
@@ -48,10 +51,10 @@ class SignUp extends React.Component {
         <div className ="row justify-content-center">
             <div className="card m-4 signUp">
                 <form onSubmit={this.handleFormSubmit}>
-                <label className ="ml-2 ml-md-5">Name</label>
+                <label className ="ml-2  mt-2 ml-md-5">Name</label>
                         <div className="form-group ml-md-5 pl-md-3" id="name">
                         
-                            <input className="ip-cls"
+                            <input className="ip-cls t-name"
                                 autoFocus
                                 type="name"
                                 name="name"
@@ -87,6 +90,7 @@ class SignUp extends React.Component {
                     </div>
                     <div className="text-center">
                     <button className="btn btn-custom mt-2" disabled={!this.validateForm()}>Sign up</button></div>
+                    <h6 className="text-center mt-2">Already have account <a href="/signin">LogIn</a> here</h6>
                 </form>
                 
             </div>

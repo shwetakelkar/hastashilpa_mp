@@ -15,7 +15,8 @@ import Event from "./pages/Events/Event"
 import DisplayItem from './pages/DisplayItem/DisplayItem';
 import OrcerPlace from './pages/OrderPlace/OrderPlace';
 import MyOrders from './pages/MyOrders/MyOrders'
-import OrderReceived from './pages/Seller/OrderReceived'
+import OrderReceived from './pages/Seller/OrderReceived';
+import ItemEdit from './pages/ItemEdit/ItemEdit'
 
 class App extends React.Component {
 	state = { currentUser: AuthHelper.getCurrentUser() }
@@ -50,9 +51,11 @@ class App extends React.Component {
 					}} />
           <Route exact path="/search/:name" component={Search} />
           <Route exact path="/seller" render={(props)=>{
-            return <Seller {...props} />}} />
+            return <Seller {...props} currentUser={currentUser} />}} />
           <Route exact path="/sellerOrders" render={(props)=>{
-          return <OrderReceived {...props} />}} />
+          return <OrderReceived {...props} currentUser={currentUser} />}} />
+          <Route exact path="/editItms" component={(props)=> {
+          return <ItemEdit {...props} currentUser={currentUser} />}}/>
           <Route exact path="/orders" component={(props)=> {
           return <MyOrders {...props} currentUser={currentUser} />}}/>
           <Route exact path="/logout" render={(props) => {

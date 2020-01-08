@@ -45,9 +45,22 @@ export default {
         return axios.get("api/order/"+id)
     },
     deleteItem: function(id){
-        return axios.delete("/api/items/"+ id);
+        return axios.delete("/api/item/"+ id);
+    },
+    getSellerOrder:function(email){
+        return axios.get("/api/order/all/sellerOrders/"+email);
     },
     sendEmail:function(msg){
         return axios.post("/api/order/email",msg)
+    },
+    getItemsByEmail: function(email){
+        return axios.get("/api/item/email/"+email)
+    },
+    getItemsByAssocEmail: function(email){
+        return axios.get("/api/item/assoEmail/"+email)
+    },
+    
+    removeImage:function(id){
+        return axios.delete("/api/new/image/"+id)
     }
 }

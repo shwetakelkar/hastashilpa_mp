@@ -58,7 +58,8 @@ const storage = new GridFsStorage({
         description:req.body.description,
         price:req.body.price,
         address:req.body.address,
-        fileID:req.file.id},(err,dbModel)=>{
+        fileID:req.file.id,
+        assoEmail:req.body.assoEmail},(err,dbModel)=>{
         if(err){
             console.log(err)
         }
@@ -149,4 +150,15 @@ const storage = new GridFsStorage({
       }
     });
   },
+  removeFile:function(req,res){
+
+    console.log("iumgfile")
+    gfs.remove({ _id: req.params.id, root: 'uploads' }, (err, gridStore) => {
+      if (err) {
+        return res.status(404).json({ err: err });
+      }
+  
+      res.send('success!');
+    });
+  }
 }

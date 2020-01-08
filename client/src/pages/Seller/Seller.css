@@ -15,3 +15,13 @@
     min-height: 500px;
     
  }
+ .order-card{
+   min-height:120px !important;
+   width:100%;
+   color: rgb(24, 59, 99) !important;
+   border: 25px !important;
+
+ }
+ .t-name{
+   text-transform: capitalize;
+ }

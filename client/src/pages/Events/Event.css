@@ -10,3 +10,6 @@
     font-weight:bold!important;
     border-radius: 25px !important;
 }
+.t-name{
+    text-transform: capitalize;
+  }

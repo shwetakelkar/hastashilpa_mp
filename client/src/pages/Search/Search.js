@@ -12,9 +12,13 @@ class Search extends React.Component{
     componentDidMount(){
 
       let search = this.props.match.params.name
+      this.setState({search:search})
       API.getAllItems(search).then(res=>{console.log(res)
-        if(res)
-          this.setState({result:res.data})})
+        if(res.data)
+            this.setState({result:res.data})
+          else{
+            this.setState({result: "no product found"});
+          }})
           .catch(err=>console.log(err))
     }
 
@@ -38,10 +42,14 @@ class Search extends React.Component{
 
 
     render() {
+
         return (
           <div className="container">
-              <div className="row">
-                {this.renderAllSearchedItems()} 
+              <div className="row mt-4">
+                {this.state.result.length>0 ?
+                (this.renderAllSearchedItems())
+                :
+                (<h1>No product is found with given search</h1>)}
               </div>
           </div>)
         }

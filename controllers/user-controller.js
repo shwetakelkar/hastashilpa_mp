@@ -2,7 +2,7 @@ const User = require('../models/User.js')
 const signToken = require('../serverAuth.js').signToken
 
 module.exports = {
-	// list all users
+	
 	index: (req, res) => {
 		User.find({}, (err, users) => {
 			res.json(users)
@@ -11,7 +11,7 @@ module.exports = {
 
 	// get one user
 	show: (req, res) => {
-		console.log("Current User:")
+		
 		console.log(req.user)
 		User.findById(req.params.id, (err, user) => {
 			res.json(user)

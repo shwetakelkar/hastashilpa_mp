@@ -32,8 +32,10 @@ class MyOrders extends Component{
                             <img src={`/api/new/file/${elem.fileId}`} className="imgTumbnail" alt=""></img>
                         </div>
                         <div className="col-sm-8">
-                            <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileId}`} alt=""><h4>{elem.orderTitle}</h4></a><hr/> 
+                            <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileId}`} alt=""><h4>{elem.orderTitle}</h4></a><hr/>
+                            <p>To : {elem.sellerEmail}</p><hr/>
                             <p> Description : {elem.orderInfo}</p>
+                            <p>Order Date : {((elem.createdDate).split("T"))[0]}</p>
                         </div>
                     </div>
                 </div>

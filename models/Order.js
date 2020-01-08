@@ -21,6 +21,10 @@ const orderSchema = new Schema({
         type:String,
         
     },
+    buyerEmail:{
+        type:String
+
+    },
     createdDate: { 
         type: Date, 
         default: Date.now },

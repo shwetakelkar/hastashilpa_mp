@@ -2,7 +2,8 @@ const Event = require('../models/Event.js');
 
 module.exports = {
     
-    create: function(req, res) {
+    //create event
+        create: function(req, res) {
        
         Event
           .create(req.body)
@@ -10,7 +11,8 @@ module.exports = {
           .catch(err => res.status(422).json(err));
         },
 
-    findAllEvents: function(req, res) {
+        //find all events to display
+        findAllEvents: function(req, res) {
 
         console.log("inside event")
         
