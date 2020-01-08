@@ -15,29 +15,19 @@ function OrderReceived(props){
     const renderOrders=(e)=>{
         e.preventDefault();
         setShowResult(true)
+        //console.log(props.currentUser)
         API.getSellerOrder(email).then(res=>{
-            
             if(res){
-                API.getItemsByEmail(email).then(result=>{
-                    if(result.data){
-                        let flag=false;
-                        result.data.forEach(elem => {
-
-                            if(elem.assoEmail === props.currentUser.email){ 
-                                flag=true
-                            }
-                            
-                        });
-                        if(flag)
-                            setResult(res.data)
-                    }
-                })
+               
+                if(props.currentUser.assocEmail.indexOf((email)) !== -1){
+                    setResult(res.data)
+                }
+                
             }}) 
         }
 
     const displayOrders=()=>
     {
-       //console.log(result)
        return(result.length ? (result.map(elem=>
             <div className="card order-card mt-4">
                 <div className="row">

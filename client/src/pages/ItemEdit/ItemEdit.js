@@ -31,8 +31,9 @@ class ItemEdit extends Component{
     displayitems=()=>
     {
        
-       return(this.state.result.length>0 ? (this.state.result.map(elem=>
-            <div className="card order-card mt-4">
+       return(this.state.result.length>0 ? 
+        (this.state.result.map(elem=>
+            <div className="card order-card mt-2 mb-2">
                 <div className="row">
                     
                     <div className="col-sm-4">
@@ -47,7 +48,6 @@ class ItemEdit extends Component{
                             <button className="btn mb-2 mr-auto">Delete</button></form>  
                     </div>
                 </div>
-                    
             </div>))
             :<h2 className="text-center">No products available to edit</h2> 
 

@@ -1,6 +1,7 @@
 const Order = require("../models/Order.js");
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+var mailApiKey = process.env.SENDGRID_API_KEY
+sgMail.setApiKey(mailApiKey);
 
 module.exports = {
 
@@ -37,7 +38,6 @@ module.exports = {
       
       Order.find({sellerEmail:req.params.email}).then(data=>{
         console.log("success!")
-        console.log(data)
         res.send(data)
       }).catch((err)=>
       console.log(err))

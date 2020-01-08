@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route,Switch,Redirect } from "react-router-dom";
 import './App.css';
-import AboutUs from './pages/AboutUs/AboutUs'
+import Settings from './pages/Settings/Settings'
 import Search from './pages/Search/Search'
 import Navibar from './components/Navibar/Navibar'
 import Login from './pages/Login/Login';
@@ -16,7 +16,8 @@ import DisplayItem from './pages/DisplayItem/DisplayItem';
 import OrcerPlace from './pages/OrderPlace/OrderPlace';
 import MyOrders from './pages/MyOrders/MyOrders'
 import OrderReceived from './pages/Seller/OrderReceived';
-import ItemEdit from './pages/ItemEdit/ItemEdit'
+import ItemEdit from './pages/ItemEdit/ItemEdit';
+import NoMatch from './pages/NoMatch/NoMatch';
 
 class App extends React.Component {
 	state = { currentUser: AuthHelper.getCurrentUser() }
@@ -40,7 +41,7 @@ class App extends React.Component {
         <Navibar currentUser={currentUser} />
         <Switch>
           <Route exact path="/" component={()=><Home currentUser={currentUser} />} />
-          <Route exact path="/aboutUs" component={AboutUs} />
+          <Route exact path="/settings" component={()=><Settings currentUser={currentUser} />}  />
           <Route exact path="/orderPlace/:title && :id" component={(props)=><OrcerPlace {...props} currentUser={currentUser} />} />
           <Route exact path="/displayItem/:id" component={(props)=><DisplayItem {...props} currentUser={currentUser} />}  />
           <Route exact path="/signin" render={(props) => {
@@ -66,6 +67,7 @@ class App extends React.Component {
 							? <Event {...props} />
 							: <Redirect to="/signin" />
 					}} />
+          <Route exact path = "*" component={NoMatch} />
           </Switch>
           <Footer />
       </div>

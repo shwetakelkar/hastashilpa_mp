@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import "./Seller.css"
 import API from "../../utils/API"
+import AuthHelper from '../../AuthHelper';
 
 
 function Seller(props){
@@ -41,8 +42,9 @@ function Seller(props){
     
       function handleSubmit(event) {
         event.preventDefault();
+        let userid = (props.currentUser._id)
         let assocEmail =(props.currentUser.email)
-        console.log(Capitalize(fields.title))
+        
         const formData = new FormData()
         formData.append("myImage",fields.image)
         
@@ -54,11 +56,18 @@ function Seller(props){
         
         formData.append("price",fields.price)
         formData.append("assoEmail",assocEmail)
+
+        let data={
+            assocEmail:fields.email
+        }
         
         API.postTestData(formData).then(res=>{
             setFields({fields:{title:'',email:'',address:'',image:'',description:'',price:''}})
             
             props.history.push("/")})
+        AuthHelper.updateUser(userid,data).then(res=>{
+            console.log("success!")
+        })
         
       }
 

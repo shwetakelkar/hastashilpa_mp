@@ -6,7 +6,7 @@ import AuthHelper from "../../AuthHelper";
 
 class Login extends React.Component {
 	state = {
-		fields: { email: '', password: ''}
+		fields: {type:'input', email: '', password: ''}
 	}
   
 
@@ -32,10 +32,14 @@ class Login extends React.Component {
 				this.props.history.push('/')
       }
       else{
-        alert("User dosn't exist.Please sign up")
+        alert("User dosn't exist. Please sign up")
       }
 		})
     
+  }
+  showPassword(e){
+    this.setState( { showpassword: !this.state.showpassword }) // this is to change checkbox state
+    this.setState({fields: { type: this.state.fields.type === 'password' ? 'text' : 'password' }}) // this is to change input box type text/password change
   }
   
  render(){
@@ -60,8 +64,8 @@ class Login extends React.Component {
                 value={this.state.fields.password}
                 name="password"
                 onChange={this.handleInputChange}
-                type="password"
-            />
+                type={this.state.fields.type}
+            />  
             </div>
             <div className=" text-center">
             <button className='btn btn-custom mx-auto mt-3' disabled={!this.validateForm()} type="submit">

@@ -62,5 +62,6 @@ export default {
     
     removeImage:function(id){
         return axios.delete("/api/new/image/"+id)
-    }
+    },
+    
 }

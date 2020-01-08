@@ -17,12 +17,12 @@ const Slideshow = () => {
       <Slide {...properties}>
         <div className="each-slide">
           <div className="slide1">
-            
+          <a className="link-ad1" href="https://arthiatsr.github.io/Project_1/">click me</a>
           </div>
         </div>
         <div className="each-slide">
           <div className="slide2">
-           
+            <a className="link-ad2" href="https://levelupmoney.herokuapp.com/">click me</a>
           </div>
         </div>
       </Slide>

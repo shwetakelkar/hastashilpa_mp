@@ -12,7 +12,10 @@ router.post('/authenticate', userController.authenticate)
 router.use(verifyToken)
 router.route('/:id')
 .get(userController.show)
-.patch(userController.update)
+.patch(userController.updateUser)
 .delete(userController.destroy)
+
+router.route('/email/:id')
+.put(userController.updateAssocEmail)
 
 module.exports = router;

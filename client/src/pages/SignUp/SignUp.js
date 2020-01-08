@@ -1,6 +1,7 @@
 import React from 'react';
 import './SignUp.css'
 import AuthHelper from '../../AuthHelper';
+import API from '../../utils/API';
 
 
 class SignUp extends React.Component {
@@ -35,11 +36,19 @@ class SignUp extends React.Component {
             
 			this.setState({fields:{ name:'',email: '', password: '',confirmPassword:'' } })
 			if(user) {
+                let msg = {
+                    to:user.email,
+                    from:"hastashilpa24.32@gmail.com",
+                    subject:"Welcome to Hasta-Shilpa",
+                    html:"Welcome to Hasta-Shilpa"
+                }
+                API.sendEmail(msg).then(res=>console.log("success!"))
+                .catch(err=>console.log(err))
 				this.props.onSignUpSuccess(user)
 				this.props.history.push('/')
             }
             else{
-                alert("User is already exist. Please Login!")
+                alert("User already exists. Please Login!")
             }
 		})
 

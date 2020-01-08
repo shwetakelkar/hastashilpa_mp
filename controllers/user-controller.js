@@ -20,7 +20,6 @@ module.exports = {
 
 	// create a new user
 	create: (req, res) => {
-		console.log(req.body)
 		User.create(req.body, (err, user) => {
 			if(err){ 
 				return res.json({success: false, code: err.code})}
@@ -31,7 +30,7 @@ module.exports = {
 	},
 
 	// update an existing user
-	update: (req, res) => {
+	updateUser: (req, res) => {
 		User.findById(req.params.id, (err, user) => {
 			Object.assign(user, req.body)
 			user.save((err, updatedUser) => {
@@ -60,5 +59,18 @@ module.exports = {
 			const token = signToken(user)
 			res.json({success: true, message: "Token attached.", token})
 		})
-	}
+	},
+
+	// update an existing user with assoEmail
+	updateAssocEmail: (req, res) => {
+		
+		User.findById(req.params.id, (err, user) => {
+			Object.assign(user, req.body)
+			const token = signToken(user)
+			user.update({$push:{assocEmail:req.body.assocEmail}},{ new: true },(err, updatedUser) => {
+				res.json({success: true, message: "User updated.", token})
+			})
+		})
+	},
+
 }
