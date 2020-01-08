@@ -60,27 +60,47 @@ function OrcerPlace(props){
     return(
 
         <div className="container">
-            <div className="row mt-4"><div className="mt-3"><strong>Placing order for " {props.match.params.title} "</strong></div></div>
+            <div className="row mt-4">
+                <div className="mt-3">
+                    <strong>Placing order for " {props.match.params.title} "</strong>
+                </div></div>
             <div className="row">
                 <div className="card card-mail mt-3 mb-3">
                     <form onSubmit={sendEmail}>
                         <div className="form-group m-3">
                             <label className="mr-5">To*</label>
-                            <input type="text" className="form-control" name="to" value={fields.to} onChange={handleInputChange}/>
+                            <input type="text" 
+                                className="form-control" 
+                                name="to" 
+                                value={fields.to} 
+                                onChange={handleInputChange}/>
                         </div>
                         <div className="form-group m-3">
                             <label className="mr-4">From*</label>
-                            <input type="text" className="form-control" name="from" value={fields.from} onChange={handleInputChange}/>
+                            <input type="text" 
+                                className="form-control" 
+                                name="from" 
+                                value={fields.from} 
+                                onChange={handleInputChange}/>
                         </div>
                         
                         <div className="form-group m-3 ">
                             <label className="mr-3">Subject*</label>
-                            <input type="text"  className="form-control t-name" name="subject" value={fields.subject} onChange={handleInputChange}/>
+                            <input type="text"  
+                                className="form-control t-name" 
+                                name="subject" 
+                                value={fields.subject} 
+                                onChange={handleInputChange}/>
                         </div>
                         
                         <div className="form-group m-3">
                             <label className="mr-3 mb-2">Message*</label>
-                            <textarea type="text" className="form-control" name="message" placeholder="eg. Quantity, shipping address" value={fields.message} onChange={handleInputChange}/>
+                            <textarea type="text" 
+                                className="form-control" 
+                                name="message" 
+                                placeholder="eg. Quantity, shipping address" 
+                                value={fields.message} 
+                                onChange={handleInputChange}/>
                         </div>
                         
                         <button className="btn m-3" disabled={!validateForm()} type="submit">Submit</button>

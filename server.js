@@ -8,13 +8,12 @@ const cors = require("cors");
 
 
 const PORT = process.env.PORT || 3001;
-//app.use(bodyParser.json())
+// Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(cors())
-// Define middleware here
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -27,9 +26,6 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/marketplace";
 mongoose.Promise = Promise;
 mongoose.connect( MONGODB_URI, { useNewUrlParser: true , useUnifiedTopology: true },(err) => {
 	console.log(err || `Connected to MongoDB.`)});
-
-//For uploading image 
-
 
 
 // Start the API server

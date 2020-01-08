@@ -8,10 +8,13 @@ function OrderReceived(props){
    
     const [result, setResult]=useState([]);
 
+    const [showResults, setShowResult]=useState(false);
+
+
 
     const renderOrders=(e)=>{
         e.preventDefault();
-        
+        setShowResult(true)
         API.getSellerOrder(email).then(res=>{
             
             if(res){
@@ -27,21 +30,21 @@ function OrderReceived(props){
                         });
                         if(flag)
                             setResult(res.data)
-
-                        }})
-            }     }) 
-
-    }
+                    }
+                })
+            }}) 
+        }
 
     const displayOrders=()=>
     {
-       console.log(result)
-       return(result ? (result.map(elem=>
+       //console.log(result)
+       return(result.length ? (result.map(elem=>
             <div className="card order-card mt-4">
                 <div className="row">
                     <div className="col-sm-4">
-                        <img src={`/api/new/file/${elem.fileId}`} onError={(e)=>e.target.src="../images/Discontinued.png"}
-                        className="imgTumbnail" alt=""></img>
+                        <img src={`/api/new/file/${elem.fileId}`} 
+                            onError={(e)=>e.target.src="../images/Discontinued.png"}
+                            className="imgTumbnail" alt=""></img>
                     </div>
                     <div className="col-sm-8">
                         <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileId}`} alt=""><h4>{elem.orderTitle}</h4></a><hr/> 
@@ -51,7 +54,7 @@ function OrderReceived(props){
                     </div>
                 </div>       
             </div>))
-            :<div>No Order received yet</div> 
+            :<div>No Orders found</div>
 
         )
     }
@@ -70,14 +73,17 @@ function OrderReceived(props){
                 <form onSubmit={renderOrders}>
                     <div className="mt-3">
                         <label>Please enter your (Seller) Email</label>
-                        <input className="form-control" name="email" value={email} onChange={handleInputChange}/>
+                        <input className="form-control" 
+                            name="email" 
+                            value={email} 
+                            onChange={handleInputChange}/>
                     </div>
                     <button className="btn m-3">Find</button>
                 </form>
             </div>
             <div className="row">
-                
-            {displayOrders()}
+                {showResults ? 
+                    displayOrders() :<div/>}
             </div>
         </div>
     )

@@ -11,11 +11,9 @@ class MyOrders extends Component{
     componentDidMount(){
 
         let userId = this.props.currentUser._id
-        let id = this.props.match.params.id
-
-        console.log(userId,id)
+        
         API.getOrders(userId).then(res=>{
-            console.log(res)
+            //console.log(res)
             if(res)
                 this.setState({orders:res.data})
         }).catch(err=>console.log(err))
@@ -29,7 +27,8 @@ class MyOrders extends Component{
                 <div className="card ordercard mt-4">
                     <div className="row">
                         <div className="col-sm-4">
-                            <img src={`/api/new/file/${elem.fileId}`} className="imgTumbnail" alt=""></img>
+                            <img src={`/api/new/file/${elem.fileId}`} 
+                                className="imgTumbnail" alt=""></img>
                         </div>
                         <div className="col-sm-8">
                             <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileId}`} alt=""><h4>{elem.orderTitle}</h4></a><hr/>
@@ -48,7 +47,9 @@ class MyOrders extends Component{
         return(
             <div className="container">
                 <div className="row">
-                    {this.renderOrders()}
+                    {this.state.orders.length>0 ? 
+                        this.renderOrders()
+                        :<h2>No orders found</h2>}
                 </div>
             </div>
         )

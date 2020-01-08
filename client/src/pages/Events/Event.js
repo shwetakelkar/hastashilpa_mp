@@ -59,20 +59,39 @@ function Event(props)
                 <form className="mt-3" onSubmit={saveEvent}>
                     <div className="form-group">
                         <label>Event Name</label>
-                        <input type="text" className="form-control t-name" name="title" value={fields.title} onChange={handleInputChange}/></div>
+                        <input type="text" 
+                            className="form-control t-name" 
+                            name="title" 
+                            value={fields.title} 
+                            onChange={handleInputChange}/></div>
                     <div className="form-group">    
                         <label>Event Date</label>
-                        <input type="date" className="form-control" name="date" value={fields.date} onChange={handleInputChange}/></div>
-                        <div className="form-group">    
+                        <input type="date" 
+                            className="form-control" 
+                            name="date" 
+                            value={fields.date} 
+                            onChange={handleInputChange}/></div>
+                    <div className="form-group">    
                         <label>Event Time</label>
-                        <input type="time" className="form-control" name="time" value={fields.time} onChange={handleInputChange}/></div>
+                        <input type="time" 
+                            className="form-control" 
+                            name="time" 
+                            value={fields.time} 
+                            onChange={handleInputChange}/></div>
                     <div className="form-group">    
                         <label>Event Venue</label>
-                        <textarea type="text" className="form-control t-name" name="venue" value={fields.venue} onChange={handleInputChange}/></div>
+                        <textarea type="text" 
+                            className="form-control t-name" 
+                            name="venue" 
+                            value={fields.venue} 
+                            onChange={handleInputChange}/></div>
                     <div className="form-group">    
-                    <label>Event description</label>
-                    <textarea type="text" className="form-control t-name" name="description" value={fields.description} onChange={handleInputChange}/></div>
-                
+                        <label>Event description</label>
+                        <textarea type="text" 
+                            className="form-control t-name" 
+                            name="description" 
+                            value={fields.description} 
+                            onChange={handleInputChange}/></div>
                     <button className="btn mb-2" disabled={!validateForm()}>Save Event</button>
                 </form>
                 

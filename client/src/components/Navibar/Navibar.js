@@ -15,15 +15,17 @@ const [state , setState] = useState({
 }
 
 return(
-    <nav role="banner" className="navbar">
-            
-        
-      <img src="../images/logo4.png" alt="logo" className="logo"></img>
-     
-     
-      <input type='text' placeholder="search" className=" form-control search" value={state.search} onChange={handleSearch}></input>
-      <a className="btn searchBtn" href={`/search/${state.search}`}>Search</a>
-      
+    <nav role="banner" className="navbar"> 
+      <img src="../images/logo4.png" 
+        alt="logo" 
+        className="logo"></img>
+      <input type='text' 
+        placeholder="search" 
+        className=" form-control search" 
+        value={state.search} 
+        onChange={handleSearch}></input>
+      <a className="btn searchBtn" 
+        href={`/search/${state.search}`}>Search</a>
       {props.currentUser ?
       (
         <>
@@ -31,11 +33,11 @@ return(
         <Dropdown.Item href="#/action-2">Hindi</Dropdown.Item>
         <Dropdown.Item href="#/action-3">Spanish</Dropdown.Item>
         <Dropdown.Item href="#/action-1">Chinese</Dropdown.Item>
-      </DropdownButton>
-      
+      </DropdownButton>  
 
       <DropdownButton id="dropdown-basic-button" title={props.currentUser.name} className="list">
         <Dropdown.Item href="/orders">Your orders</Dropdown.Item>
+        <Dropdown.Item href="/settings">Settings</Dropdown.Item>
        <hr/>
         <Dropdown.Item href="/logout">Log out</Dropdown.Item>
       </DropdownButton>
@@ -51,9 +53,7 @@ return(
       {/* <Link  to= "/aboutUs" className="nav-link list aboutUsBtn" >Aboutus</Link> */}
       <Link  to= "/" className="nav-link list home">Home</Link>
       
-    </nav>
-
-)
+    </nav>)
 }
 
 export default Navibar

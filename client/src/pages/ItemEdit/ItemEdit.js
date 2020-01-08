@@ -70,9 +70,8 @@ class ItemEdit extends Component{
     return(
 
         <div className="container">
-            <div className="row mt-4">
-                
-            {this.displayitems()}
+            <div className="row mt-4">   
+                {this.displayitems()}
             </div>
         </div>
     )

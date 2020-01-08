@@ -13,7 +13,7 @@ class Search extends React.Component{
 
       let search = this.props.match.params.name
       this.setState({search:search})
-      API.getAllItems(search).then(res=>{console.log(res)
+      API.getAllItems(search).then(res=>{//console.log(res)
         if(res.data)
             this.setState({result:res.data})
           else{
@@ -29,7 +29,8 @@ class Search extends React.Component{
         <div className="card seachcard mt-4">
           <div className="row">
               <div className="col-sm-3">
-                  <img src={`/api/new/file/${elem.fileID}`} className="imgTumbnail" alt=""></img>
+                  <img src={`/api/new/file/${elem.fileID}`} 
+                    className="imgTumbnail" alt=""></img>
               </div>
               <div className="col-sm-8">
                 <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileID}`} alt=""><h4>{elem.title} : {elem.description}</h4></a><hr/>
