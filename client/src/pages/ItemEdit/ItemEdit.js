@@ -32,7 +32,7 @@ class ItemEdit extends Component{
     {
        
        return(this.state.result.length>0 ? (this.state.result.map(elem=>
-            <div className="card order-card">
+            <div className="card order-card mt-4">
                 <div className="row">
                     
                     <div className="col-sm-4">
@@ -41,8 +41,10 @@ class ItemEdit extends Component{
                     <div className="col-sm-8">
                         <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileID}`} alt=""><h4>{elem.title}</h4></a><hr/> 
                         <p> Description : {elem.description}</p>
-                        <form onSubmit={()=>this.removeItem(elem._id,elem.fileID)}>
-                    <button className="btn mb-2 mr-auto">Delete</button></form>  
+                        <form onSubmit={()=> { 
+                            if (window.confirm('Are you sure you wish to delete this item? Please check the orders First!'))                   
+                                this.removeItem(elem._id,elem.fileID)}}>
+                            <button className="btn mb-2 mr-auto">Delete</button></form>  
                     </div>
                 </div>
                     

@@ -13,12 +13,10 @@ function OrderReceived(props){
         e.preventDefault();
         
         API.getSellerOrder(email).then(res=>{
-            console.log(res.data);
             
             if(res){
                 API.getItemsByEmail(email).then(result=>{
                     if(result.data){
-                        console.log(result.data);
                         let flag=false;
                         result.data.forEach(elem => {
 
@@ -27,7 +25,6 @@ function OrderReceived(props){
                             }
                             
                         });
-                        console.log(flag)
                         if(flag)
                             setResult(res.data)
 
@@ -43,11 +40,12 @@ function OrderReceived(props){
             <div className="card order-card mt-4">
                 <div className="row">
                     <div className="col-sm-4">
-                        <img src={`/api/new/file/${elem.fileId}`} className="imgTumbnail" alt=""></img>
+                        <img src={`/api/new/file/${elem.fileId}`} onError={(e)=>e.target.src="../images/Discontinued.png"}
+                        className="imgTumbnail" alt=""></img>
                     </div>
                     <div className="col-sm-8">
                         <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileId}`} alt=""><h4>{elem.orderTitle}</h4></a><hr/> 
-                        <p> From :{elem.buyerEmail} </p>
+                        <p> From : {elem.buyerEmail} </p>
                         <p> Description : {elem.orderInfo}</p>
                         <p>Order Received Date : {((elem.createdDate).split("T"))[0]}</p>
                     </div>

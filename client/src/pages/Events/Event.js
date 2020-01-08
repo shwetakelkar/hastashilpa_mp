@@ -19,21 +19,25 @@ function Event(props)
         e.preventDefault();
         const { name, value } = e.target;
         setFields({ ...fields, [name]: value });
-      }
+    }
 
-      const validateForm=()=>{
-          return(fields.title && fields.venue)
-      }
+    const validateForm=()=>{
+        return(fields.title && fields.venue)
+    }
+
+    function Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
 
     const saveEvent=(event)=>{
         event.preventDefault();
        
         let data ={
-            title:fields.title,
+            title:Capitalize(fields.title),
             date:fields.date,
             time:fields.time,
-            venue:fields.venue,
-            description:fields.description
+            venue:Capitalize(fields.venue),
+            description:Capitalize(fields.description)
         }
         API.saveEvent(data).then(res=>{
             setFields({fields:{title:'',time:'',date:'',venue:'',description:''}})

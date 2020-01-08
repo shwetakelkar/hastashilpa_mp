@@ -34,18 +34,22 @@ function Seller(props){
         setFields({ ...fields, [name]: value });
     
       }
+
+      function Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+        }
     
       function handleSubmit(event) {
         event.preventDefault();
         let assocEmail =(props.currentUser.email)
-        console.log(assocEmail)
+        console.log(Capitalize(fields.title))
         const formData = new FormData()
         formData.append("myImage",fields.image)
         
-        formData.append("title",fields.title)
-        formData.append("address",fields.address)
+        formData.append("title",Capitalize(fields.title))
+        formData.append("address",Capitalize(fields.address))
         formData.append("email",fields.email)
-        formData.append("description",fields.description)
+        formData.append("description",Capitalize(fields.description))
 
         
         formData.append("price",fields.price)
@@ -82,7 +86,7 @@ function Seller(props){
                         <input  className="form-control" type="file" name="myImage" onChange={handleFilechange}/></div>
                     <div className="form-group" >
                         <label>Description</label>
-                        <textarea  className="form-control t-name" type="text" name="description" value={fields.description} onChange={handleInputChange}></textarea></div>
+                        <textarea  className="form-control" type="text" name="description" value={fields.description} onChange={handleInputChange}></textarea></div>
                     <div className="form-group" >
                         <label>Email</label>
                         <input  className="form-control" type="text"  name="email" value={fields.email} onChange={handleInputChange} /></div>

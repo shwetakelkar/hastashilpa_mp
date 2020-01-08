@@ -16,7 +16,11 @@ function OrcerPlace(props){
         e.preventDefault();
         const { name, value } = e.target;
         setFields({ ...fields, [name]: value });
-      }
+    }
+
+    function Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
 
     const validateForm=() =>{
     
@@ -31,14 +35,14 @@ function OrcerPlace(props){
         const msg = {
             to: fields.to,
             from: fields.from,
-            subject:fields.subject,
-            html:fields.message
+            subject:Capitalize(fields.subject),
+            html:Capitalize(fields.message)
         
         };
         let data={
             orderTitle:props.match.params.title,
             fileId:props.match.params.id,
-            orderInfo:fields.message,
+            orderInfo:Capitalize(fields.message),
             userId:props.currentUser._id,
             sellerEmail:fields.to,
             buyerEmail:fields.from,
@@ -76,7 +80,7 @@ function OrcerPlace(props){
                         
                         <div className="form-group m-3">
                             <label className="mr-3 mb-2">Message*</label>
-                            <textarea type="text" className="form-control t-name" name="message" placeholder="eg. Quantity, shipping address" value={fields.message} onChange={handleInputChange}/>
+                            <textarea type="text" className="form-control" name="message" placeholder="eg. Quantity, shipping address" value={fields.message} onChange={handleInputChange}/>
                         </div>
                         
                         <button className="btn m-3" disabled={!validateForm()} type="submit">Submit</button>
