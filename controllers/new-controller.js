@@ -101,7 +101,7 @@ const storage = new GridFsStorage({
 
       findAllImages: function(req, res){
 
-        gfs.files.find().limit(8).sort({$natural:-1}).toArray((err, result) => {
+        gfs.files.find().limit(9).sort({$natural:-1}).toArray((err, result) => {
           // Check if file
           if (!result || result.length === 0) {
             return res.status(404).json({

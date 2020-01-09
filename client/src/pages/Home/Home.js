@@ -48,7 +48,7 @@ class Home extends Component{
                 <div  key={elem._id} className="card ml-md-4 eventCard">
                     <h5>{elem.title}</h5>
                     <h6>Date:{((elem.date).split("T"))[0]}</h6>
-                    <h6>time:{elem.time}</h6>
+                    <h6>Time:{elem.time}</h6>
                     <h6>Venue:{elem.venue}</h6>
                     <h6>Info:{elem.description}</h6>
                     
@@ -66,12 +66,12 @@ class Home extends Component{
         
             <div className="container-fluid homeClass">
                 <div className="row">
-                    <div className="col-sm-3 eventClass pt-2 ml-5 ml-md-0 order-md-1 order-2"><h3 className="mt-3 ml-0">Events</h3>
+                    <div className="col-sm-2 eventClass pt-2 ml-5 ml-md-0 order-md-1 order-2"><h3 className="mt-3 ml-0">Events</h3>
                         <img className="addImg ml-md-1" src="/images/desssign.png" alt=""></img>
                         {this.renderEvents()}
                         <p><a href ="/event" className="btn eventBtn text-center m-2" onClick={this.addingEvent}>AddEvent</a></p> 
                     </div>
-                    <div className="col-sm-7 pt-2 order-md-2"><h3 className="text-center">Recently Added Products</h3>   
+                    <div className="col-sm-8 pt-2 order-md-2"><h3 className="text-center">Recently Added Products</h3>   
                         <div className="row">  
                         {this.state.files ?
                             this.renderImages():(<div> No Item available</div>)}

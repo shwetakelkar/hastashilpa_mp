@@ -1,6 +1,6 @@
 .navbar {
     background-image: linear-gradient(rgba(216, 155, 84, 0.4),rgba(216, 155, 84, 0.4)),url("/images/handipage2.jpg") !important;
-    
+    width: 100%;
     height: 200px !important;
     padding: 0 !important;
 

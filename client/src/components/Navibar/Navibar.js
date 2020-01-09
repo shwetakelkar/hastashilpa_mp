@@ -36,10 +36,9 @@ return(
       </DropdownButton>  
 
       <DropdownButton id="dropdown-basic-button" title={props.currentUser.name} className="list">
+        <Dropdown.Item href="/" className="home_mob">Home</Dropdown.Item>
         <Dropdown.Item href="/orders">Your orders</Dropdown.Item>
         <Dropdown.Item href="/settings">Settings</Dropdown.Item>
-        <Dropdown.Item href="/" className="home_mob">Home</Dropdown.Item>
-
        <hr/>
         <Dropdown.Item href="/logout">Log out</Dropdown.Item>
       </DropdownButton>

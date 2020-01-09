@@ -50,7 +50,7 @@ class Search extends React.Component{
                 {this.state.result.length>0 ?
                 (this.renderAllSearchedItems())
                 :
-                (<h1>No product is found with given search</h1>)}
+                (<h3>{`No product found for ' ${this.state.search} ' `}</h3>)}
               </div>
           </div>)
         }
