@@ -32,7 +32,7 @@ function OrderReceived(props){
     const displayOrders=()=>
     {
        return(result.length ? (result.map(elem=>
-            <div className="card order-card mt-4">
+            <div className="card order-card mt-2 mb-2">
                 <div className="row">
                     <div className="col-sm-4">
                         <img src={`/api/new/file/${elem.fileId}`} 

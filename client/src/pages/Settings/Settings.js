@@ -13,10 +13,11 @@ const Settings = (props) => {
     const handlePasswordChange =e=>
     {
         e.preventDefault();
+        setShow(false);
     }
     return(
     <div className="container">
-        <div className="row mt-4">
+        <div className="row mt-2 mb-2">
             <div className="card card-settings">
                 <div className="row m-4 justify-content-center">
                     <span>User Name : </span>
@@ -30,11 +31,23 @@ const Settings = (props) => {
                     <button className="btn ml-3">Edit Password</button></form>
                 </div>
                 <div className="row m-4 justify-content-center">
-                    <span>Email : </span>
+                    <span>Account Email : </span>
                     <div className="ml-2"> {props.currentUser.email}</div>
                     <button className="btn ml-3">Edit Email</button>
                 </div>
-                <div className="row m-2 justify-content-center ">
+                {props.currentUser.assocEmail ?
+                    (<><div className="row m-4 justify-content-center">
+                        <span>Seller Email : </span>
+                        <div className="ml-2">
+                            {props.currentUser.assocEmail.map(elem=>
+                                <ul>
+                                    <li>{elem}</li>
+                                </ul>)}
+                        </div>
+                        </div>
+                        <div className="text-center"><button className="btn float-right p-md-2 mr-md-5">Edit Email</button></div>
+                   </>):<div/>}<hr/>
+                <div className="row m-2 justify-content-center">
                     <button className="btn">Delete Account</button>
                 </div>
             </div>
@@ -46,6 +59,7 @@ const Settings = (props) => {
         </Modal.Header>
         <Modal.Body>
             <FormControl
+                type="password"
                 placeholder="new Password"
                 aria-label="new Password"
                 aria-describedby="basic-addon2"

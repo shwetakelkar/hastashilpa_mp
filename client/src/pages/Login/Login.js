@@ -64,7 +64,7 @@ class Login extends React.Component {
                 value={this.state.fields.password}
                 name="password"
                 onChange={this.handleInputChange}
-                type={this.state.fields.type}
+                type="password"
             />  
             </div>
             <div className=" text-center">
