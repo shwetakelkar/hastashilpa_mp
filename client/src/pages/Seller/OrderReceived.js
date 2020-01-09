@@ -19,8 +19,8 @@ function OrderReceived(props){
         API.getSellerOrder(email).then(res=>{
             if(res){
 
-                console.log(props.currentUser)
-                console.log(props.currentUser.assocEmail.indexOf((email)) )
+                //console.log(props.currentUser)
+                //console.log(props.currentUser.assocEmail.indexOf((email)) )
                
                 if(props.currentUser.assocEmail.indexOf((email)) !== -1){
                     setResult(res.data)

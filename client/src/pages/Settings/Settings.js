@@ -35,7 +35,7 @@ const Settings = (props) => {
                     <div className="ml-2"> {props.currentUser.email}</div>
                     <button className="btn ml-3">Edit Email</button>
                 </div>
-                {props.currentUser.assocEmail ?
+                {props.currentUser.assocEmail.length>0 ?
                     (<><div className="row m-4 justify-content-center">
                         <span>Seller Email : </span>
                         <div className="ml-2">

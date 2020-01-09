@@ -64,13 +64,17 @@ module.exports = {
 	// update an existing user with assoEmail
 	updateAssocEmail: (req, res) => {
 		
-		User.findById(req.params.id, (err, user) => {
+		User.findByIdAndUpdate(req.params.id, {$addToSet:{assocEmail:req.body.assocEmail}},{ new: true },(err, user) => {
+			
 			//console.log("******",user);
 			//Object.assign(user, req.body)
+			
 			const token = signToken(user)
-			user.update({$addToSet:{assocEmail:req.body.assocEmail}},{ new: true },(err, updatedUser) => {
-				res.json({success: true, message: "User updated.", token})
-			})
+			res.json({success: true, message: "User updated.", token})
+			// user.update({$addToSet:{assocEmail:req.body.assocEmail}},{ new: true },(err, updatedUser) => {
+			// 	console.log("@@@@@@",updatedUser)
+			// 	res.json({success: true, message: "User updated.", token})
+			// })
 		})
 	},
 

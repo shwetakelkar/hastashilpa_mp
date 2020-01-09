@@ -47,11 +47,11 @@ function OrcerPlace(props){
             sellerEmail:fields.to,
             buyerEmail:fields.from,
         }
-        API.saveOrder(data).then(res=>{console.log(res)
-        API.sendEmail(msg).then(res=>{
-        console.log(res)
-        setFields({fields:{to:'',from:'',subject:'',message:''}})
-        props.history.push("/")})
+        API.saveOrder(data).then(res=>{
+            API.sendEmail(msg).then(res=>{
+            
+            setFields({fields:{to:'',from:'',subject:'',message:''}})
+            props.history.push("/")})
         .catch(err=> console.log(err))}).catch(err=> console.log(err))
 
     }

@@ -24,7 +24,7 @@ class BuyerOrders extends Component{
 
         return(
             this.state.orders.map(elem=>
-                <div className="card ordercard mt-4">
+                <div className="card ordercard mt-4 mb-2">
                     <div className="row">
                         <div className="col-sm-4">
                             <img src={`/api/new/file/${elem.fileId}`}
