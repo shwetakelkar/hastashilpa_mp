@@ -65,9 +65,10 @@ module.exports = {
 	updateAssocEmail: (req, res) => {
 		
 		User.findById(req.params.id, (err, user) => {
-			Object.assign(user, req.body)
+			//console.log("******",user);
+			//Object.assign(user, req.body)
 			const token = signToken(user)
-			user.update({$push:{assocEmail:req.body.assocEmail}},{ new: true },(err, updatedUser) => {
+			user.update({$addToSet:{assocEmail:req.body.assocEmail}},{ new: true },(err, updatedUser) => {
 				res.json({success: true, message: "User updated.", token})
 			})
 		})
