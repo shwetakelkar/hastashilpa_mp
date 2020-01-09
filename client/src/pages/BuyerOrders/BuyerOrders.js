@@ -50,7 +50,7 @@ class BuyerOrders extends Component{
                 <div className="row">
                     {this.state.orders.length>0 ? 
                         this.renderOrders()
-                        :<h2>No orders found</h2>}
+                        :<h3 className="mt-3">No orders found</h3>}
                 </div>
             </div>
         )
