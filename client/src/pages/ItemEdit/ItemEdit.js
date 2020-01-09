@@ -49,7 +49,7 @@ class ItemEdit extends Component{
                     </div>
                 </div>
             </div>))
-            :<h2 className="text-center">No products available to edit</h2> 
+            :<h3 className="text-center">No products available to edit</h3> 
 
         )
     }

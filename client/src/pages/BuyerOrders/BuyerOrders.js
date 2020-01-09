@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import API from "../../utils/API";
-import "./MyOrder.css"
+import "./BuyerOrders.css"
 
-class MyOrders extends Component{
+class BuyerOrders extends Component{
     state={
 
         orders:[]
@@ -27,7 +27,8 @@ class MyOrders extends Component{
                 <div className="card ordercard mt-4">
                     <div className="row">
                         <div className="col-sm-4">
-                            <img src={`/api/new/file/${elem.fileId}`} 
+                            <img src={`/api/new/file/${elem.fileId}`}
+                                onError={(e)=>e.target.src="../images/Discontinued.png"}
                                 className="imgTumbnail" alt=""></img>
                         </div>
                         <div className="col-sm-8">
@@ -57,4 +58,4 @@ class MyOrders extends Component{
 
 }
 
-export default MyOrders
+export default BuyerOrders

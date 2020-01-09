@@ -1,12 +1,9 @@
 .jumbotron{
 
     height: 300px !important; 
-    
+    background: transparent;
     text-align: "center";
-    background-image: url("/images/handipage2.jpg") !important;
-    filter: blur(8px) !important;
-    -webkit-filter: blur(4px) !important;
-    filter: brightness(80%) !important; 
+    
     
  }
  .search-title{

@@ -14,7 +14,7 @@ import Logout from "./pages/Logout/Logout";
 import Event from "./pages/Events/Event"
 import DisplayItem from './pages/DisplayItem/DisplayItem';
 import OrcerPlace from './pages/OrderPlace/OrderPlace';
-import MyOrders from './pages/MyOrders/MyOrders'
+import BuyerOrders from './pages/BuyerOrders/BuyerOrders'
 import OrderReceived from './pages/Seller/OrderReceived';
 import ItemEdit from './pages/ItemEdit/ItemEdit';
 import NoMatch from './pages/NoMatch/NoMatch';
@@ -58,7 +58,7 @@ class App extends React.Component {
           <Route exact path="/editItms" component={(props)=> {
           return <ItemEdit {...props} currentUser={currentUser} />}}/>
           <Route exact path="/orders" component={(props)=> {
-          return <MyOrders {...props} currentUser={currentUser} />}}/>
+          return <BuyerOrders {...props} currentUser={currentUser} />}}/>
           <Route exact path="/logout" render={(props) => {
 						return <Logout onLogOut={this.logOut.bind(this)} />
 					}} />

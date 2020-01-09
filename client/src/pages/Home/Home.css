@@ -41,9 +41,7 @@
     padding:0 !important;
     border: 5px solid rgb(250, 242, 221)!important;
 }
-.jumbotron{
-    background-image: url("/images/handipage2.jpg");
-}
+
 .eventBtn{
     margin:15px 0px !important
 }
