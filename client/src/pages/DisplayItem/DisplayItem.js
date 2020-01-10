@@ -33,7 +33,7 @@ class DisplayItem extends Component
         let title = this.state.title;
         return(
             <div className="container">
-            <div className="row">
+            <div className="row ml-2">
                 <h2>{this.state.title}</h2></div><br/>
             <div className="row ml-2">
                 <h5> Price: ${this.state.price}</h5></div><hr/>

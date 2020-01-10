@@ -26,7 +26,7 @@ class Search extends React.Component{
     {
       
       return(this.state.result.map(elem=>
-        <div className="card seachcard mt-4">
+        <div className="card seachcard mt-2 mb-2">
           <div className="row">
               <div className="col-sm-3">
                   <img src={`/api/new/file/${elem.fileID}`} 
