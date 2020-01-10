@@ -39,7 +39,7 @@
     max-width:300px !important;
     border: 1px solid rgb(24, 59, 99) !important;
     padding:0 !important;
-    border: 5px solid rgb(250, 242, 221)!important;
+    border: 5px solid rgb(238, 217, 166)!important;
 }
 
 .eventBtn{
@@ -65,6 +65,22 @@ body{
 @media screen and (max-width:640px){
     .img-card{
         margin-left: 5px !important;
+        width:100px !important;
+        height:100px !important;
+    }
+    #imge{
+        width:100px !important;
+        height:100px !important;
+    
+    }
+    .addImg{
+       
+        width: 225px !important; 
+        
+        
+    }
+    .adClass{
+        width: 250px !important;
     }
     
 }

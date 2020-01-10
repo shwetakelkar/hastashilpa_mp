@@ -14,6 +14,10 @@ const [state , setState] = useState({
   setState({search:e.target.value})
 }
 
+function Capitalize(str){
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 return(
     <nav role="banner" className="navbar"> 
       <img src="../images/logo4.png" 
@@ -35,7 +39,7 @@ return(
         <Dropdown.Item href="#/action-1">Chinese</Dropdown.Item>
       </DropdownButton>  
 
-      <DropdownButton id="dropdown-basic-button" title={props.currentUser.name} className="list">
+      <DropdownButton id="dropdown-basic-button" title={Capitalize(props.currentUser.name)} className="list">
         <Dropdown.Item href="/" className="home_mob">Home</Dropdown.Item>
         <Dropdown.Item href="/orders">Your orders</Dropdown.Item>
         <Dropdown.Item href="/settings">Settings</Dropdown.Item>

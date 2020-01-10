@@ -25,7 +25,7 @@ module.exports = {
     }, 
     //find all orders of given user(buyer)
     findAllOrders:function(req,res){
-      Order.find({userId:req.params.id}).then(data=>{
+      Order.find({userId:req.params.id}).sort({$natural:-1}).then(data=>{
         console.log("success!")
         res.send(data)
       }).catch((err)=>

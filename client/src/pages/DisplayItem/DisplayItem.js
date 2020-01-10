@@ -36,7 +36,7 @@ class DisplayItem extends Component
             <div className="row">
                 <h2>{this.state.title}</h2></div><br/>
             <div className="row ml-2">
-                <h5> Price: {this.state.price}$</h5></div><hr/>
+                <h5> Price: ${this.state.price}</h5></div><hr/>
             <div className ="card img-card mb-3">
                 <img src={ id ? `/api/new/file/${id}` : `http://placehold.it/200x200`} 
                     className="img-cls" alt=""></img></div><hr/>

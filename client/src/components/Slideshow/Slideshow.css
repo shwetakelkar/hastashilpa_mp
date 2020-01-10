@@ -37,11 +37,3 @@ each-slide > div {
   color:transparent
 }
 
-@media screen and (max-width:640px){
-    .slide1 {
-        background-size: 400px 500px !important;
-    }
-    .slide2{
-        background-size: 400px 500px !important;
-    }
-}
