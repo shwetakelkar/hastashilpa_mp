@@ -15,13 +15,16 @@ const Settings = (props) => {
         e.preventDefault();
         setShow(false);
     }
+    function Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
     return(
     <div className="container">
         <div className="row mt-2 mb-2">
             <div className="card card-settings">
                 <div className="row m-4 justify-content-center">
                     <span>User Name : </span>
-                    <div className="ml-2"> {props.currentUser.name}</div>
+                    <div className="ml-2"> {Capitalize(props.currentUser.name)}</div>
                     <button className="btn ml-3">Edit Name</button>
                 </div>
                 <div className="row m-4 justify-content-center">

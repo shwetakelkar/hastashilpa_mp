@@ -36,7 +36,7 @@ module.exports = {
      //find all orders by email(seller)
     findAllSellerOrders:function(req,res){
       
-      Order.find({sellerEmail:req.params.email}).then(data=>{
+      Order.find({sellerEmail:req.params.email}).sort({$natural:-1}).then(data=>{
         console.log("success!")
         res.send(data)
       }).catch((err)=>
