@@ -13,3 +13,12 @@
     width:200px;
     height: 100% !important;
 }
+
+@media screen and (max-width:640px){
+
+    .imgTumbnail{
+        width:auto;
+        max-height: 200px !important;
+    }
+
+}
