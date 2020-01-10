@@ -1,6 +1,6 @@
 .seachcard{
     min-height:120px !important;
-    width:100%;
+    width:100% !important;
     color: rgb(24, 59, 99) !important;
     border: 25px !important;
 
@@ -11,14 +11,14 @@
 }
 .imgTumbnail{
     width:200px;
-    height: 100% !important;
+    max-height: 150px !important;
 }
 
 @media screen and (max-width:640px){
 
     .imgTumbnail{
-        width:200px !important;
-        height: 200px !important;
+        width:100px !important;
+        height: 100px !important;
     }
 
 }

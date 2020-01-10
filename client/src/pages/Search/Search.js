@@ -28,13 +28,13 @@ class Search extends React.Component{
       return(this.state.result.map(elem=>
         <div className="card seachcard mt-2 mb-2">
           <div className="row">
-              <div className="col-sm-3">
+              <div className="col-md-3 col my-auto ml-2 m-md-2 my-md-0">
                   <img src={`/api/new/file/${elem.fileID}`} 
                     className="imgTumbnail" alt=""></img>
               </div>
-              <div className="col-sm-8">
+              <div className="col-md-8 col">
                 <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileID}`} alt=""><h4>{elem.title} : {elem.description}</h4></a><hr/>
-                <p className="ml-4"> Description : {elem.description}</p>
+                <p> Description : {elem.description}</p>
               </div>
             </div>
         </div>
