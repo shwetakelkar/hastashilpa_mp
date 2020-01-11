@@ -33,7 +33,7 @@ class Search extends React.Component{
                     className="imgTumbnail" alt=""></img>
               </div>
               <div className="col-md-8 col">
-                <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileID}`} alt=""><h4>{elem.title} : {elem.description}</h4></a><hr/>
+                <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileID}`} alt=""><h4>{elem.title}</h4></a><hr/>
                 <p> Description : {elem.description}</p>
               </div>
             </div>
