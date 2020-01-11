@@ -17,8 +17,8 @@
 @media screen and (max-width:640px){
 
     .imgTumbnail{
-        width:100px !important;
-        height: 100px !important;
+        width:100% !important;
+        height: 150px !important;
     }
 
 }
