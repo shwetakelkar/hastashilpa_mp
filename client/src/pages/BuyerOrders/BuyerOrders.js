@@ -26,12 +26,12 @@ class BuyerOrders extends Component{
             this.state.orders.map(elem=>
                 <div className="card ordercard mt-4 mb-2">
                     <div className="row">
-                        <div className="col-sm-4">
+                        <div className="col-md-4 col my-auto my-md-0">
                             <img src={`/api/new/file/${elem.fileId}`}
                                 onError={(e)=>e.target.src="../images/Discontinued.png"}
                                 className="imgTumbnail" alt=""></img>
                         </div>
-                        <div className="col-sm-8">
+                        <div className="col-md-8 col">
                             <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileId}`} alt=""><h4>{elem.orderTitle}</h4></a><hr/>
                             <p>To : {elem.sellerEmail}</p><hr/>
                             <p> Description : {elem.orderInfo}</p>

@@ -1,8 +1,19 @@
 .card-mail{
 
     min-height:450px;
-    width:70%;
+    width:70% !important;
 }
 .t-name{
     text-transform: capitalize;
+  }
+
+  @media screen and (max-width:640px){
+   
+
+    .card-mail{
+
+        /* min-height:450px !important; */
+        width:100% !important;
+    }
+
   }

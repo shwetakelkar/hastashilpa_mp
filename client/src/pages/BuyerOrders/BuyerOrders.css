@@ -19,5 +19,22 @@ p{
 }
 .imgTumbnail{
     width:200px;
-    height: 100%;
+    height: 100% !important;
+    
+}
+
+
+@media screen and (max-width:640px){
+
+    .imgTumbnail{
+        width:100% !important;
+        height: 200px !important;
+        margin:10px;
+    }
+
+    .ordercard{
+        width:100% !important;
+        margin: 15px;
+    }
+
 }
