@@ -60,7 +60,7 @@ class SignUp extends React.Component {
         <div className ="row justify-content-center">
             <div className="card m-4 signUp">
                 <form onSubmit={this.handleFormSubmit}>
-                <label className ="ml-2  mt-2 ml-md-5">Name</label>
+                <label className ="ml-2  mt-2 ml-md-5">Name*</label>
                         <div className="form-group ml-md-5 pl-md-3" id="name">
                         
                             <input className="ip-cls t-name"
@@ -70,7 +70,7 @@ class SignUp extends React.Component {
                                 value={this.state.fields.name}
                                 onChange={this.handleInputChange}/>
                         </div>
-                    <label className ="ml-2 ml-md-5">Email</label>
+                    <label className ="ml-2 ml-md-5">Email*</label>
                         <div className="form-group ml-md-5 pl-md-3" id="email">
                         
                             <input className="ip-cls"
@@ -79,7 +79,7 @@ class SignUp extends React.Component {
                                 value={this.state.fields.email}
                                 onChange={this.handleInputChange}/>
                         </div>
-                    <label className ="ml-2 ml-md-5">password</label>
+                    <label className ="ml-2 ml-md-5">password*</label>
                     <div className="form-group ml-md-5 pl-md-3" id="password">
                
                         <input className="ip-cls"
@@ -88,7 +88,7 @@ class SignUp extends React.Component {
                             value={this.state.fields.password}
                             onChange={this.handleInputChange}/>
                     </div>
-                    <label className ="ml-2 ml-md-5">Confirm Password</label>
+                    <label className ="ml-2 ml-md-5">Confirm Password*</label>
                     <div className="form-group ml-md-5 pl-md-3" id="confirmPwd">
                 
                     <input className="ip-cls"

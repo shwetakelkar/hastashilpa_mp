@@ -5,7 +5,7 @@ import "./Slideshow.css"
 
 
 const properties = {
-  duration: 5000,
+  duration: 50000,
   transitionDuration: 500,
   infinite: true,
   indicators: true,

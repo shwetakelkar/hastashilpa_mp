@@ -67,7 +67,7 @@ class Login extends React.Component {
                 type="password"
             />  
             </div>
-            <div className=" text-center">
+            <div className="text-center">
             <button className='btn btn-custom mx-auto mt-3' disabled={!this.validateForm()} type="submit">
                 Login
             </button></div>

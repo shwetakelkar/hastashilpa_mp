@@ -3,6 +3,7 @@
     width:100% !important;
     color: rgb(24, 59, 99) !important;
     border: 25px !important;
+    background-image: linear-gradient(rgba(240, 208, 170, 0.6),rgba(247, 211, 171, 0.6)),url("/images/nv45.jpg") !important;
 
 }
 .itemLink{
@@ -11,7 +12,7 @@
 }
 .imgTumbnail{
     width: 100%;
-    height: 150px !important;
+    height: 100% !important;
 }
 
 @media screen and (max-width:640px){

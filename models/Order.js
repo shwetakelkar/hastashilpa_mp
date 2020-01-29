@@ -10,6 +10,7 @@ const orderSchema = new Schema({
     orderInfo:{ type:String },
     buyerEmail:{ type:String },
     createdDate: { type: Date, default: Date.now },
+    itemId:{ type:String },
 });
 
 module.exports = mongoose.model('Order', orderSchema);

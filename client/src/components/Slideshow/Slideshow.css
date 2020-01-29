@@ -1,39 +1,39 @@
 each-slide > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    height: 300px;
-  }
-  
-  .each-slide span {
-    padding: 20px;
-    font-size: 20px;
-    background:transparent;
-    text-align: center;
-  }
-  .slide1{
-      background-image: url("/images/slide1.jpg");
-      height: 500px;
-      background-size: 200px 500px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 300px;
+}
 
-  .slide2{
-    background-image: url("/images/slide2.jpg");
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background:transparent;
+  text-align: center;
+}
+.slide1{
+    background-image: url("/images/slide1.jpg");
     height: 500px;
     background-size: 200px 500px;
 }
 
+.slide2{
+  background-image: url("/images/slide2.jpg");
+  height: 500px;
+  background-size: 200px 500px;
+}
+
 .slide-container {
-  width: 70%;
-  margin: auto;
-  color: white !important;
-  }
+width: 70%;
+margin: auto;
+color: white !important;
+}
 
 .link-ad1{
-  color: white !important;
+color: white !important;
 }
 .link-ad2{
-  color:transparent
+color:transparent
 }
 

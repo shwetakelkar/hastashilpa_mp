@@ -18,10 +18,13 @@
 
 .bd-footer {
     
-    background-image: linear-gradient(rgba(223, 167, 104, 0.4),rgba(216, 155, 84, 0.4)),url("/images/handipage2.jpg") !important;
+    background-image: linear-gradient(rgba(216, 155, 84, 0.6),rgba(216, 155, 84, 0.6)),url("/images/nv45.jpg") !important;
+    /* background-image: linear-gradient(rgba(216, 155, 84, 0.6),rgba(216, 155, 84, 0.6)),url("/images/bg-21.jpg"); */
     z-index: 9999;
+    background: cover;
     color: rgb(24, 59, 99);
-    
+    /* background-color:rgb(243, 183, 69); */
+    background-color: white;
     /* position: static; */
     bottom: 0;
     width: 100%;
@@ -32,7 +35,7 @@
 }
 
 .bd-footer:before{
-    background-image: url("/images/handipage2.jpg") !important;
+    background-image: url("/images/bg1.jpeg") !important;
     content: "";
     position: absolute;
     bottom: 0px;
@@ -51,6 +54,14 @@
 .card-text{
     font-size: 18px !important;
     font-weight: unset !important;
+    
+}
+
+.footer-card{
+    /* background-color:rgba(12, 10, 10, 0.877) !important; */
+    border: none !important;
+    background-color: transparent !important;
+    color: rgba(12, 10, 10, 0.877) ;
 }
   
   

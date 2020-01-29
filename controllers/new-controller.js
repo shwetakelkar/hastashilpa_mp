@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const Grid = require("gridfs-stream");
 
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/marketplace";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/hs-marketplace";
 
 
 const conn = mongoose.createConnection(MONGODB_URI, { useNewUrlParser: true , useUnifiedTopology: true }) 
@@ -57,9 +57,11 @@ const storage = new GridFsStorage({
         title:req.body.title,
         description:req.body.description,
         price:req.body.price,
+        category:req.body.category,
         address:req.body.address,
         fileID:req.file.id,
-        assoEmail:req.body.assoEmail},(err,dbModel)=>{
+        assoEmail:req.body.assoEmail,
+        summary:req.body.summary},(err,dbModel)=>{
         if(err){
             console.log(err)
         }
@@ -101,7 +103,7 @@ const storage = new GridFsStorage({
 
       findAllImages: function(req, res){
 
-        gfs.files.find().limit(9).sort({$natural:-1}).toArray((err, result) => {
+        gfs.files.find().limit(10).sort({$natural:-1}).toArray((err, result) => {
           // Check if file
           if (!result || result.length === 0) {
             return res.status(404).json({
@@ -152,7 +154,6 @@ const storage = new GridFsStorage({
   },
   removeFile:function(req,res){
 
-    console.log("iumgfile")
     gfs.remove({ _id: req.params.id, root: 'uploads' }, (err, gridStore) => {
       if (err) {
         return res.status(404).json({ err: err });
@@ -160,5 +161,51 @@ const storage = new GridFsStorage({
   
       res.send('success!');
     });
-  }
+  },
+  findCategory:function(req,res){
+
+    Item.find({category:req.params.category},{fileID:1, _id:0},(err,result) =>{
+
+      if(err){
+        console.log(err)
+      }
+      else{
+        
+        var ids = result.map(elem=>elem.fileID)  
+            
+        gfs.files.find({ _id:{$in:ids}}).toArray(function(err,doc) {
+          // Check if file
+          if(err){
+            console.log(err)
+          }
+          else{
+            if (!doc || doc.length === 0) {
+              return res.status(404).json({
+                err: "No file exists"
+              });
+            }
+            else {
+              doc.map(file => {
+                if (
+                  file.contentType === 'image/jpeg' ||
+                  file.contentType === 'image/png'
+                ) {
+                  file.isImage = true;
+                } else {
+                  file.isImage = false;
+                }
+              })
+              res.json(doc);
+            }
+          }
+        }); 
+   
+      }
+
+    });
+
+    
+
+},
+
 }

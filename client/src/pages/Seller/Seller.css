@@ -1,6 +1,7 @@
  .btn-seller{
     background-color:rgb(24, 59, 99);
     color: white;
+    border: 1px solid;
  }
  body{
     color: rgb(24, 59, 99);
@@ -20,8 +21,12 @@
    width:100%;
    color: rgb(24, 59, 99) !important;
    border: 25px !important;
+   background-image: linear-gradient(rgba(240, 208, 170, 0.6),rgba(247, 211, 171, 0.6)),url("/images/nv45.jpg") !important;
 
  }
  .t-name{
    text-transform: capitalize;
+ }
+ .btn-find{
+   border: 1px solid;
  }

@@ -25,18 +25,18 @@ const Settings = (props) => {
                 <div className="row m-4 justify-content-center">
                     <span>User Name : </span>
                     <div className="ml-2"> {Capitalize(props.currentUser.name)}</div>
-                    <button className="btn ml-3">Edit Name</button>
+                    <button className="btn ml-3 editbtn">Edit Name</button>
                 </div>
                 <div className="row m-4 justify-content-center">
                     <span>Password : </span>
                     <div className="ml-2">************</div>
                     <form onClick={handleShow}>
-                    <button className="btn ml-3">Edit Password</button></form>
+                    <button className="btn ml-3 editbtn">Edit Password</button></form>
                 </div>
                 <div className="row m-4 justify-content-center">
                     <span>Account Email : </span>
                     <div className="ml-2"> {props.currentUser.email}</div>
-                    <button className="btn ml-3">Edit Email</button>
+                    <button className="btn ml-3 editbtn">Edit Email</button>
                 </div>
                 {props.currentUser.assocEmail.length>0 ?
                     (<><div className="row m-4 justify-content-center">
@@ -48,10 +48,10 @@ const Settings = (props) => {
                                 </ul>)}
                         </div>
                         </div>
-                        <div className="text-center"><button className="btn float-right p-md-2 mr-md-5">Edit Email</button></div>
+                        <div className="text-center"><button className="btn float-right p-md-2 mr-md-5 editbtn">Edit Email</button></div>
                    </>):<div/>}<hr/>
                 <div className="row m-2 justify-content-center">
-                    <button className="btn">Delete Account</button>
+                    <button className="btn editbtn">Delete Account</button>
                 </div>
             </div>
         </div>

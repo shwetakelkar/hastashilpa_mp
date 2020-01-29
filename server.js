@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/marketplace";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/hs-marketplace";
 mongoose.Promise = Promise;
 mongoose.connect( MONGODB_URI, { useNewUrlParser: true , useUnifiedTopology: true },(err) => {
 	console.log(err || `Connected to MongoDB.`)});

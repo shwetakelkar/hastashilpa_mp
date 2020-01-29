@@ -72,5 +72,32 @@ module.exports = {
               })
               .catch(err => res.status(422).json(err))
               
+          },
+          updateItemAsBS:function(req,res){
+            
+            Item.findByIdAndUpdate(req.params.id,{bestSeller:req.body.value},
+            (err,dbModel) => res.json(dbModel))
+            
+          },
+          findAllBestSellers:function(req,res){
+            
+            Item
+              .find({bestSeller:true}).limit(5)
+              .then(data=>{
+                res.json(data)
+              })
+              .catch(err => res.status(422).json(err))
+              
+          },
+          updateItemReview:function(req,res){
+            Item
+              .findByIdAndUpdate(req.params.id,{$push:{reviews:req.body}},{ new: true },(err, data) => {
+                if(err){
+                  console.log(err)
+                }
+                else{
+                  res.json("success!")
+                }
+              })
           }
 }

@@ -11,7 +11,7 @@ input{
     min-width:300px !important
 }
 .btn-custom{
-    background-color: rgb(24, 59, 99) !important;
+    /* background-color: rgb(24, 59, 99) !important; */
     color:white;
     width: 80%;
 }

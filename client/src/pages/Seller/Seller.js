@@ -13,7 +13,9 @@ function Seller(props){
         address:"",
         image:null,
         description:"",
-        price:""
+        price:"",
+        category:"",
+        summary:""
 
     });
 
@@ -25,6 +27,7 @@ function Seller(props){
             && fields.email
             && fields.price
             && fields.description
+            && fields.category
         
       }
 
@@ -52,8 +55,8 @@ function Seller(props){
         formData.append("address",Capitalize(fields.address))
         formData.append("email",fields.email)
         formData.append("description",Capitalize(fields.description))
-
-        
+        formData.append("summary",fields.summary)
+        formData.append("category",fields.category)
         formData.append("price",fields.price)
         formData.append("assoEmail",assocEmail)
 
@@ -62,7 +65,7 @@ function Seller(props){
         }
         
         API.postTestData(formData).then(res=>{
-            setFields({fields:{title:'',email:'',address:'',image:'',description:'',price:''}})
+            setFields({fields:{title:'',email:'',address:'',image:'',description:'',price:'',summary:''}})
             
             props.history.push("/")})
         AuthHelper.updateUser(userid,data).then(res=>{
@@ -77,13 +80,18 @@ function Seller(props){
         setFields({...fields,image: file });
       }
 
+      const handleSelectChange=(event) =>{
+
+          setFields({...fields,category:event.target.value });
+      }
+
     return(
         <div className="container">
             <div className="row justify-content-center">
                 
                 <form onSubmit={handleSubmit} className="sellerform mt-3" enctype="multipart/form-data">
                     <div className="form-group" >
-                        <label>Title</label>
+                        <label>Title*</label>
                         <input className="form-control t-name" 
                             type="text"  
                             name="title" 
@@ -91,7 +99,15 @@ function Seller(props){
                             onChange={handleInputChange}/>
                     </div>
                     <div className="form-group" >
-                        <label>Quote Price(in $)</label>
+                        <label>Item Summary*</label>
+                        <textarea className="form-control t-name" 
+                            type="text"  
+                            name="summary" 
+                            value={fields.summary} 
+                            onChange={handleInputChange}/>
+                    </div>
+                    <div className="form-group" >
+                        <label>Quote Price(in $)*</label>
                         <input  className="form-control" 
                             type="Number" 
                             name="price" 
@@ -99,27 +115,38 @@ function Seller(props){
                             onChange={handleInputChange}/>
                     </div>
                     <div className="form-group" >
-                        <label>Add Product Image </label>
+                        <label>Add Product Image* </label>
                         <input  className="form-control" 
                             type="file" 
                             name="myImage" 
                             onChange={handleFilechange}/></div>
                     <div className="form-group" >
-                        <label>Description</label>
+                        <label>Categories* </label>
+                        <select class="form-control" id="cata" onChange={handleSelectChange} value={fields.category}>
+                            <option>Select category</option>
+                            <option>Jewelry & Accessories</option>
+                            <option>Home Decore</option>
+                            <option>Clothing</option>
+                            <option>Fabrics</option>
+                            <option>Kitchen</option>
+                            <option>Stationary</option>    
+                        </select></div>
+                    <div className="form-group" >
+                        <label>Item Details*</label>
                         <textarea  className="form-control" 
                             type="text" 
                             name="description" 
                             value={fields.description} 
                             onChange={handleInputChange}></textarea></div>
                     <div className="form-group" >
-                        <label>Email</label>
+                        <label>Email*</label>
                         <input  className="form-control" 
                             type="text"  
                             name="email" 
                             value={fields.email} 
                             onChange={handleInputChange} /></div>
                     <div className="form-group" >
-                        <label>Address</label>
+                        <label>Address*</label>
                         <textarea className="form-control t-name" 
                             type="text" 
                             name="address" 

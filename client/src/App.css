@@ -37,6 +37,16 @@
   }
 }
 body{
-  background-color: rgb(253, 225, 147) !important; 
+  /* background-color:rgb(245, 207, 101) !important; */
+  /* background-image: linear-gradient(rgba(240, 190, 140, 0.79),rgba(245, 183, 111, 0.79)),url("/images/bg-21.jpg"); */
+  
+  background-color: rgba(222, 191, 130, 0.29);
+  /* background-color: rgb(239, 214, 174) !important;  */
+  /* background-color: black; */
+}
+.btn{
+
+  color:rgba(39,31,20) !important;
+  background-color:transparent!important;
 }
 

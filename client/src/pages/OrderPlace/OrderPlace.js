@@ -23,7 +23,7 @@ function OrcerPlace(props){
     }
 
     const validateForm=() =>{
-    
+        
         return(fields.to
             && fields.from 
             && fields.message)
@@ -39,6 +39,7 @@ function OrcerPlace(props){
             html:Capitalize(fields.message)
         
         };
+        
         let data={
             orderTitle:props.match.params.title,
             fileId:props.match.params.id,
@@ -46,6 +47,7 @@ function OrcerPlace(props){
             userId:props.currentUser._id,
             sellerEmail:fields.to,
             buyerEmail:fields.from,
+            itemId:props.match.params.itemId
         }
         API.saveOrder(data).then(res=>{
             API.sendEmail(msg).then(res=>{
@@ -58,7 +60,7 @@ function OrcerPlace(props){
    
 
     return(
-
+        
         <div className="container">
             <div className="row mt-4">
                 <div className="mt-3">
@@ -103,7 +105,7 @@ function OrcerPlace(props){
                                 onChange={handleInputChange}/>
                         </div>
                         
-                        <button className="btn m-3" disabled={!validateForm()} type="submit">Submit</button>
+                        <button className="btn m-3 btn-submit" disabled={!validateForm()} type="submit">Submit</button>
 
                     </form>
                 </div>

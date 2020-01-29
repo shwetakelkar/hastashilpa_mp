@@ -8,8 +8,9 @@ input{
     min-width:300px !important
 }
 .btn-custom, .btn-signUp{
-    background-color: rgb(24, 59, 99) !important;
-    color:white !important;
+    /* background-color: rgb(24, 59, 99) !important; */
+    color:rgb(24, 59, 99) !important;
+    border: 1px solid;
     
 
 }

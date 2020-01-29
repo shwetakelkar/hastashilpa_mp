@@ -41,8 +41,9 @@ class App extends React.Component {
         <Navibar currentUser={currentUser} />
         <Switch>
           <Route exact path="/" component={()=><Home currentUser={currentUser} />} />
+          <Route exact path="/categories/:name" component={Home} />
           <Route exact path="/settings" component={()=><Settings currentUser={currentUser} />}  />
-          <Route exact path="/orderPlace/:title && :id" component={(props)=><OrcerPlace {...props} currentUser={currentUser} />} />
+          <Route exact path="/orderPlace/:title && :id && :itemId" component={(props)=><OrcerPlace {...props} currentUser={currentUser} />} />
           <Route exact path="/displayItem/:id" component={(props)=><DisplayItem {...props} currentUser={currentUser} />}  />
           <Route exact path="/signin" render={(props) => {
 						return <Login {...props} onLoginSuccess={this.onLoginSuccess.bind(this)} />

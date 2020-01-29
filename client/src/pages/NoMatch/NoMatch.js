@@ -2,7 +2,7 @@ import React from "react";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 
 const NoMatch = () => (
-  <div class="container-fluid" >
+  <div className="container-fluid" >
     <div className="row">
       <div className="col-md-12">
         <Jumbotron>

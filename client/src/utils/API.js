@@ -10,6 +10,10 @@ export default {
         return axios.get("/api/new")
     },
 
+    getCategoryItem:function(category){
+        return axios.get("/api/new/all/"+category)
+    },
+
     getLatestItems: function(){
         return axios.get("/api/item");
     },
@@ -63,5 +67,15 @@ export default {
     removeImage:function(id){
         return axios.delete("/api/new/image/"+id)
     },
+    updateItemAsBestSeller:function(id,value){
+        return axios.put("/api/item/best/"+id,value)
+    },
+    getBestSellers:function(){
+        return axios.get("/api/item/bestSellers/test")
+    },
+    updateReview:function(id,data){
+        return axios.put("/api/item/review/"+id,data)
+    }
+    
     
 }

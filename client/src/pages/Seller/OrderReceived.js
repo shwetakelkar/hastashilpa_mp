@@ -34,7 +34,7 @@ function OrderReceived(props){
        return(result.length ? (result.map(elem=>
             <div className="card order-card mt-2 mb-2">
                 <div className="row">
-                    <div className="col-sm-4">
+                    <div className="col-sm-4  my-auto">
                         <img src={`/api/new/file/${elem.fileId}`} 
                             onError={(e)=>e.target.src="../images/Discontinued.png"}
                             className="imgTumbnail" alt=""></img>
@@ -42,7 +42,7 @@ function OrderReceived(props){
                     <div className="col-sm-8">
                         <a className="mt-4 ml-4 itemLink" href={`/displayItem/${elem.fileId}`} alt=""><h4>{elem.orderTitle}</h4></a><hr/> 
                         <p> From : {elem.buyerEmail} </p>
-                        <p> Description : {elem.orderInfo}</p>
+                        <p> Message : {elem.orderInfo}</p>
                         <p>Order Received Date : {((elem.createdDate).split("T"))[0]}</p>
                     </div>
                 </div>       
@@ -71,7 +71,7 @@ function OrderReceived(props){
                             value={email} 
                             onChange={handleInputChange}/>
                     </div>
-                    <button className="btn m-3">Find</button>
+                    <button className="btn m-3 btn-find">Find</button>
                 </form>
             </div>
             <div className="row">

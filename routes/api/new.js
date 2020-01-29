@@ -13,6 +13,9 @@ router.route("/:filename").get(newController.findImage)
 router.route("/file/:id")
 .get(newController.findImagebyId)
 
+router.route("/all/:category")
+.get(newController.findCategory)
+
 router.route("/image/:id")
 .delete(newController.removeFile)
 

@@ -18,9 +18,16 @@ router.route("/email/:email")
 router.route("/assoEmail/:email")
 .get(itemController.findByAssocEmail)
 
+router.route("/best/:id")
+.put(itemController.updateItemAsBS)
 
+router.route("/review/:id")
+.put(itemController.updateItemReview)
 
 router.route("/:id")
 .delete(itemController.remove)
+
+router.route("/bestSellers/test")
+.get(itemController.findAllBestSellers)
 
 module.exports = router;
