@@ -43,14 +43,20 @@ class Home extends Component{
     
     
     renderImages(){
-       
+
+        let allItems;
+        if(this.props.match)
+            allItems = this.state.files
+        else
+            allItems = this.state.files.slice(0, 5)
         return (
-            this.state.files.slice(0, 5).map((elem)=>{
-               
+             
+            allItems.map((elem)=>{
+            
                 return<div className ="col-sm-5 img-card mb-3 mr-2 ml-2" id={elem._id}>
                     <a href={`/displayItem/${elem._id}`} ><img src={`/api/new/${elem.filename}`} alt="" id="imge"></img></a> 
                 </div> }
-              )
+            )
         )
     }
 
@@ -116,18 +122,22 @@ class Home extends Component{
                             this.renderImages():(<div> No Item available</div>)}
                         </div>
                     </div>
-                    <div className="col-sm-12 main-card mt-1"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Best Sellers`)}</h5>   
-                        <div className="row justify-content-center">  
-                        {this.state.files ?
-                            this.renderBestSellerImages():(<div> No Item available</div>)}
+                    {this.props.match ? <div/> :
+                        <div className="col-sm-12 main-card mt-1"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Best Sellers`)}</h5>   
+                            <div className="row justify-content-center">  
+                            {this.state.files ?
+                                this.renderBestSellerImages():(<div> No Item available</div>)}
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-sm-12 main-card mt-1"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Top Trends`)}</h5>   
-                        <div className="row justify-content-center">  
-                        {this.state.files ?
-                            this.renderTopImages():(<div> No Item available</div>)}
+                    }
+                    {this.props.match ? <div/> :
+                        <div className="col-sm-12 main-card mt-1"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Top Trends`)}</h5>   
+                            <div className="row justify-content-center">  
+                            {this.state.files ?
+                                this.renderTopImages():(<div> No Item available</div>)}
+                            </div>
                         </div>
-                    </div>
+                    }
                     {/* <div className="col-sm-2 pt-2 m-2 m-md-0 adClass order-md-12 mx-auto order-12">
                         <h3 className="mt-3"> Advertisments</h3>
                         <img className="addImg" src="/images/desssign.png" alt=""></img>

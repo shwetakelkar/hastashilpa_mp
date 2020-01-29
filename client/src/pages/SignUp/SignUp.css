@@ -4,9 +4,11 @@ body{
 .signUp{
     width:600px;
     min-height:380px;
+    background-image: linear-gradient(rgba(240, 208, 170, 0.6),rgba(247, 211, 171, 0.6)),url("/images/nv45.jpg") !important;
+}
     
 
-}
+
 input{
     min-width:300px !important
 }

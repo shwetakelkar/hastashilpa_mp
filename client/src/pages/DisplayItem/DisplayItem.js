@@ -80,7 +80,7 @@ class DisplayItem extends Component
                         </div>
                         <div className="row mt-5 ml-1">
                             <a  href=
-                            {this.props.currentUser?(`/orderPlace/${title} && ${id} && ${this.state.id}`):(`/signin`)} className="btn large editbtn">OrderNow</a>
+                            {this.props.currentUser?(`/orderPlace/${title} && ${id} && ${this.state.id}`):(`/signin`)} className="btn large editbtn">Order Now</a>
                         </div>
                     </div>
 
