@@ -30,7 +30,6 @@ class Home extends Component{
                 this.setState({files:res.data})})
             .catch(err => console.log(err));
             API.getBestSellers().then(res=>{
-                console.log(res)
                 this.setState({bestSellers:res.data})})
             .catch(err => console.log(err));
 
@@ -116,14 +115,14 @@ class Home extends Component{
                         {this.renderEvents()}
                         <p><a href ="/event" className="btn eventBtn text-center m-2" onClick={this.addingEvent}>AddEvent</a></p> 
                     </div> */}
-                    <div className="col-sm-12 main-card"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Recently Added Products`)}</h5>   
+                    <div className="col-sm-12 main-card"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Freshly Added Products`)}</h5>   
                         <div className="row justify-content-center">  
                         {this.state.files ?
                             this.renderImages():(<div> No Item available</div>)}
                         </div>
                     </div>
                     {this.props.match ? <div/> :
-                        <div className="col-sm-12 main-card mt-1"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Best Sellers`)}</h5>   
+                        <div className="col-sm-12 main-card mt-1"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Best Sellers of the Week`)}</h5>   
                             <div className="row justify-content-center">  
                             {this.state.files ?
                                 this.renderBestSellerImages():(<div> No Item available</div>)}
@@ -131,7 +130,7 @@ class Home extends Component{
                         </div>
                     }
                     {this.props.match ? <div/> :
-                        <div className="col-sm-12 main-card mt-1"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Top Trends`)}</h5>   
+                        <div className="col-sm-12 main-card mt-1"><h5 className="p-3 label">{this.props.match ? (this.props.match.params.name):(`Top Trends and Special Offers`)}</h5>   
                             <div className="row justify-content-center">  
                             {this.state.files ?
                                 this.renderTopImages():(<div> No Item available</div>)}

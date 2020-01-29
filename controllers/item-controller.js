@@ -64,7 +64,6 @@ module.exports = {
           },
            //find all product of given logged in user
           findByAssocEmail:function(req,res){
-            
             Item
               .find({assoEmail:req.params.email})
               .then(data=>{
