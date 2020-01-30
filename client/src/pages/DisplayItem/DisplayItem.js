@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import "./DisplayItem.css";
 import Rating from "../../components/Rating/Rating"
 
+
 class DisplayItem extends Component
 {
     state={
@@ -15,14 +16,15 @@ class DisplayItem extends Component
         id:'',
         rating:0,
         reviews:[],
-        bestSeller:false
+        bestSeller:false,
+        loaded: false
     }
 
     componentDidMount(){
         
         let id = this.props.match.params.id
-        
-            API.getItem(id).then(res=>{
+        // this.setState({rating:3})
+         API.getItem(id).then(res=>{
             //console.log(res)
                 this.setState({title:res.data.title,
                     email:res.data.email,
@@ -31,23 +33,52 @@ class DisplayItem extends Component
                     price:res.data.price,
                     address:res.data.address,
                     id:res.data._id,
+                    rating:3,
                     summary:res.data.summary,
-                    rating:res.data.rating,
-                    reviews:res.data.reviews})})
-            .catch(err => console.log(err));  
+                    reviews:res.data.reviews})
+
+                    if(this.state.reviews){
+                        let stars = this.state.reviews.reduce((sum,review)=> sum+review.stars,0);
+                        stars = stars/this.state.reviews.length;
+                        this.setState({rating:stars})
+                        this.setState({loaded:true})
+                        
+                    }
+                    else{
+                        this.setState({loaded:true})
+                    }
+                
+                })
+                .catch(err => console.log(err));
+            
+             
+
     }
 
+    // componentWillReceiveProps(){
+
+    //     if(this.state.reviews){
+    //         let stars = this.state.reviews.reduce((sum,review)=> sum+review.stars,0);
+    //         stars = stars/this.state.reviews.length;
+    //         this.setState({rating:stars})
+            
+    //         }
+
+    // }
     renderReviews(){
-        console.log(this.state.reviews)
+        
         return (
         this.state.reviews.map(elem=>
-            <div className="mt-2"><Rating numberOfStars="5"
-            currentRating={elem.stars}
-            makeDissable="true"/>
-            {/* {this.setState({rating:elem.stars})} */}
-            <div>{elem.review}</div></div>)
+            <div className="mt-2">
+                <Rating numberOfStars="5"
+                currentRating={elem.stars}
+                makeDissable="true"/>
+            <div>{elem.review}</div></div>)   
         )
+         
     }
+
+    
     renderItem(){
         let id = this.props.match.params.id
         let title = this.state.title;
@@ -98,11 +129,11 @@ class DisplayItem extends Component
     }
    
     render(){
-    return(<div className="container">
-        <div className="row mt-5">
-           {this.renderItem()}
-        </div>
-    </div>)
+        return(<div className="container">
+            <div className="row mt-5">
+            {this.state.loaded ? this.renderItem(): null}
+            </div>
+        </div>)
     }
 
 }

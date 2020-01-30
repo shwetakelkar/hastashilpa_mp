@@ -24,6 +24,7 @@ class Rating extends Component {
     };
 
     setRating = ev => {
+        console.log(this.state.currentRating)
         const stars = this.refs.rating.getElementsByClassName('star');
         Array.from(stars).forEach(star => { 
           star.style.color =

@@ -14,7 +14,7 @@ const itemSchema = new Schema({
     category:{type:String,required:true},
     createdDate: { type: Date, default: Date.now },
     fileID: { type: Schema.Types.ObjectId },
-    rating:{type:Number},
+    rating:{type:Number,default:1},
     reviews:{type: Array},
     
 });

@@ -63,7 +63,8 @@ class ItemEdit extends Component{
                             <form onChange={()=>this.handleBtn(elem._id)}>
                                 <input type="checkbox" className="mb-2 ml-5" defaultChecked={elem.bestSeller}/>
                                 <label className="ml-2 mt-2">BestSeller</label>
-                            </form>  </div>
+                            </form>
+                            </div>
                     </div>
                 </div>
             </div>}))
