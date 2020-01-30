@@ -23,7 +23,6 @@ class DisplayItem extends Component
     componentDidMount(){
         
         let id = this.props.match.params.id
-        // this.setState({rating:3})
          API.getItem(id).then(res=>{
             //console.log(res)
                 this.setState({title:res.data.title,
@@ -33,7 +32,6 @@ class DisplayItem extends Component
                     price:res.data.price,
                     address:res.data.address,
                     id:res.data._id,
-                    rating:3,
                     summary:res.data.summary,
                     reviews:res.data.reviews})
 
