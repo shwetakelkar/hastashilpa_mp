@@ -22,7 +22,7 @@ function Capitalize(str){
 
 return(
     <nav role="banner" className="navbar"> 
-      <DropdownButton id="dropdown-basic-button" className="fa fa-bars btn menu">
+      <DropdownButton id="dropdown-basic-button" className="fa fa-bars btn menu" title="">
         <Dropdown.Item href="/categories/Jewelry & accessories">Jewelry & Accessories</Dropdown.Item>
         <Dropdown.Item href="/categories/Home Decore">Home Decor</Dropdown.Item>
         <Dropdown.Item href="/categories/Clothing">Clothing</Dropdown.Item>
@@ -39,7 +39,7 @@ return(
       value={state.search} 
       onChange={handleSearch}></input>
       <a className="btn searchBtn" 
-      href={`/search/${state.search}`}><span className="fa fa-search form-control-feedback"></span></a>
+      href={state.search ? `/search/${state.search}` : `/`}><span className="fa fa-search form-control-feedback"></span></a>
      
       {props.currentUser ?
       (
