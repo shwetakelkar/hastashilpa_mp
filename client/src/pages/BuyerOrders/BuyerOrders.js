@@ -47,7 +47,7 @@ class BuyerOrders extends Component{
         let itemId = this.state.itemId;
         let data = {
             stars:stars,
-            review:review
+            review:review+" - "+this.props.currentUser.name
         }
         API.updateReview(itemId,data)
         .then(res=>{console.log(res)
