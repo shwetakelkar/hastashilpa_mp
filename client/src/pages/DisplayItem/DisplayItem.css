@@ -14,3 +14,13 @@
 .custom-btn{
     background-color: rgb(223,194,154) !important;
 }
+@media screen and (max-width:640px){
+
+    .img-cls{
+
+        width: 100% !important;
+        height:100% !important;
+    
+    }
+
+}

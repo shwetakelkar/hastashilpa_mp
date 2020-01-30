@@ -23,7 +23,7 @@ function Capitalize(str){
 return(
     <nav role="banner" className="navbar"> 
       <DropdownButton id="dropdown-basic-button" className="fa fa-bars btn menu" title="">
-        <Dropdown.Item href="/categories/Jewelry & accessories">Jewelry & Accessories</Dropdown.Item>
+        <Dropdown.Item href="/categories/Jewelry & Accessories">Jewelry & Accessories</Dropdown.Item>
         <Dropdown.Item href="/categories/Home Decore">Home Decor</Dropdown.Item>
         <Dropdown.Item href="/categories/Clothing">Clothing</Dropdown.Item>
         <Dropdown.Item href="/categories/Fabrics">Fabrics</Dropdown.Item>
